@@ -1,0 +1,74 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+a {
+  color: @linkColor;
+
+  &:visited {
+    color: @linkColor;
+  }
+
+  &:active {
+    color: @linkActiveColor;
+  }
+
+  &:hover {
+    color: @linkHoverColor;
+  }
+}
+
+p.has--clear--both:empty {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#view > #page-document > .cardsCarousel,
+.blocks-form > .invisible > div > .block-editor-listing {
+  max-width: 1250px !important;
+}
+
+.block-editor-listing {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slick-slide > div > .ui > .image {
+  width: 396px !important;
+  height: 516px !important;
+}
+
+.slick-slide > div > .ui > .image img {
+  width: 396px !important;
+  height: 516px !important;
+  border-radius: 10px !important;
+}
+
+.cards-carousel {
+  width: 1250px !important;
+}
+
+.cards-carousel .next-arrow {
+  top: 40% !important;
+  right: -5rem !important;
+}
+
+.cards-carousel .prev-arrow {
+  top: 40% !important;
+  left: -5rem !important;
+}
+
+.card .meta .date {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: #f26119 !important;
+}
+
+.cards-carousel .slick-dots li button:before {
+  width: 13px !important;
+  height: 13px !important;
+  border-color: #f26119 !important;
+}
