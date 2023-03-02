@@ -1,0 +1,136 @@
+.header {
+  background-color: #f0f4f5;
+  color: #658f99;
+}
+
+.main.bar {
+  height: 10%;
+}
+
+.main.bar .ui.container {
+  height: 80px;
+}
+
+.eea.header {
+  border-bottom: 1px solid #658f99;
+}
+
+.main-menu {
+  align-items: center;
+  //   justify-content: space-between
+  justify-content: center;
+}
+
+.right-menu {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ui.image.eea-logo {
+  width: 88px;
+  height: 54px;
+  margin-top: 0;
+}
+
+.search-action {
+  height: 50px;
+}
+
+.ui.container {
+  width: 100%;
+  margin-left: 5% !important;
+}
+
+.ui.grid > div {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ui.text > .item > a {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.search-ab {
+  margin-left: 10px;
+}
+
+.search-icon-ab {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  color: #658f99;
+  float: left;
+}
+
+.ui.image {
+  float: left !important;
+}
+
+.ui.dropdown.divider {
+  color: #658f99 !important;
+}
+
+.search-input-ab {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #658f99;
+  background-color: transparent;
+  color: #658f99;
+  float: left;
+}
+
+.search-input-ab::placeholder {
+  color: #658f99;
+}
+
+div.ui.dropdown.item.header-top-item:nth-child(1) {
+  width: 100% !important;
+  padding: 0 15px !important;
+}
+
+.right-menu {
+  justify-content: center;
+}
+
+.language-column {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border-right: 1px solid #658f99;
+  border-left: 1px solid #658f99;
+}
+
+#language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+body
+  > div#main:nth-child(2)
+  > div.eea.header:nth-child(2)
+  > div.main.bar
+  > div.ui.container
+  > div.ui.grid
+  > div.three.wide.computer.eight.mobile.tablet.column.right-menu:nth-child(3)
+  > div.language-column:nth-child(1)
+  > div#language-switcher.ui.dropdown.item.header-top-item
+  > div.divider.text:nth-child(1) {
+  color: #658f99;
+}
+
+body
+  > div#main:nth-child(2)
+  > div.eea.header:nth-child(2)
+  > div.main.bar
+  > div.ui.container
+  > div.ui.grid
+  > div.three.wide.computer.eight.mobile.tablet.column.right-menu:nth-child(3) {
+  height: 80px;
+  margin: 0;
+}
+
+#navigation > div.item > a {
+  color: #658f99 !important;
+  font-weight: 400 !important;
+}
