@@ -1,0 +1,109 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+#icons>.columns-block .block-editor-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui.items>.item>.content p {
+  width: max-content;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  width: fit-content;
+}
+
+#icons>.grid>.column>div>.ui>.item>.icon {
+  background-color: #F0F5F4;
+  border-radius: 50px;
+  min-height: 70px !important;
+  min-width: 70px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slate-editor-link {
+  text-decoration: none !important;
+}
+
+.text-right>a,
+p.styled-slate>a {
+  color: @linkColorAB;
+  line-height: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid @linkColorAB;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: '\25BA';
+    position: absolute;
+    top: 80%;
+    color: @linkColorAB;
+    right: -7px;
+  }
+
+  &:hover {
+    color: @linkHoverColorAB;
+  }
+
+  &:visited {
+    color: @linkColorAB;
+  }
+
+  &:active {
+    color: @linkActiveColorAB;
+  }
+}
+
+a {
+  color: @linkColor;
+
+  &:hover {
+    color: @linkHoverColor;
+  }
+
+  &:visited {
+    color: @linkColor;
+  }
+
+  &:active {
+    color: @linkActiveColor;
+  }
+}
+
+p.has--clear--both:empty {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subsite.subsite-natura2000 {
+  &.contenttype-lrf {
+    .ui.basic.segment.content-area {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
+
+  .subsite-logo {
+    background-color: red;
+  }
+}
+
+.ui.inverted.tertiary.buttons .button,
+.ui.inverted.tertiary.button {
+  color: #F26119 !important;
+  box-shadow: 0px 0px 0px 2px #F26119 inset !important;
+  border-radius: 50px;
+  padding: 4px 6px;
+  font-size: 30px;
+}

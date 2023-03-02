@@ -1,0 +1,6 @@
+/*******************************
+            Footer
+*******************************/
+
+@mobileFooterBackgroundGrandient    : #38445E;
+@computerFooterBackgroundGrandient  : #38445E;
