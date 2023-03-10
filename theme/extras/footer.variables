@@ -4,3 +4,5 @@
 
 @mobileFooterBackgroundGrandient    : #38445E;
 @computerFooterBackgroundGrandient  : #38445E;
+@linkColor: #FFF;
+@linkVisitedColor: #FFF;
