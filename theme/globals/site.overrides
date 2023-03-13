@@ -1,0 +1,180 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+#icons>.columns-block .block-editor-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns-view>.column-grid>.column>div>.ui.items>.item {
+  background-color: transparent;
+}
+
+.ui.items>.item>.content p {
+  width: max-content;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+}
+
+
+#icons>.grid>.column>div>.ui>.item>.icon {
+  background-color: #F0F5F4;
+  border-radius: 50px;
+  min-height: 70px !important;
+  min-width: 70px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  width: fit-content;
+}
+
+.slate-editor-link {
+  text-decoration: none !important;
+}
+
+// Arrow Underline
+.text-left>a,
+.text-right>a,
+.text-center>a,
+p.styled-slate>a {
+  color: @linkColorAB;
+  line-height: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid @linkColorAB;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: '\25BA';
+    position: absolute;
+    top: 80%;
+    color: @linkColorAB;
+    right: -7px;
+  }
+
+  &:hover {
+    color: @linkHoverColorAB;
+  }
+
+  &:visited {
+    color: @linkColorAB;
+  }
+
+  &:active {
+    color: @linkActiveColorAB;
+  }
+}
+
+.text-left>.anchor,
+.text-center>.anchor,
+.text-right>.anchor {
+  border-bottom: none;
+
+  &:before {
+    content: none;
+  }
+}
+
+a {
+  color: @linkColor;
+
+  &:hover {
+    color: @linkHoverColor;
+  }
+
+  &:visited {
+    color: @linkColor;
+  }
+
+  &:active {
+    color: @linkActiveColor;
+  }
+
+  &:hover {
+    color: @linkHoverColor;
+  }
+}
+
+// reports arrow
+p.has--clear--both:empty {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cardsGallery a.ui.button {
+  font-size: 0;
+  visibility: hidden;
+}
+
+.cardsGallery a.ui.button:before {
+  padding: 0px 4px;
+  border: 2px solid @linkColorAB;
+  border-radius: 50%;
+  color: @linkColorAB;
+  content: '➜';
+  font-size: 20px;
+  visibility: visible;
+}
+
+.cardsGallery a.ui.button:hover:before {
+  background-color: @linkColorAB;
+  color: #fff;
+// carousel image
+.slick-slide .ui.cards > .card:not(.rounded) > .image,
+.slick-slide .ui.card:not(.rounded) > .image {
+  height: @cardImageHeight !important;
+
+  img {
+    height: @imageHeight !important;
+    border-radius: 10px;
+  }
+}
+
+// carousel arrows
+.cards-carousel .next-arrow {
+  top: 40% !important;
+  right: -5rem !important;
+}
+
+.cards-carousel .prev-arrow {
+  top: 40% !important;
+  left: -5rem !important;
+}
+
+// carousel card
+.card .meta .date {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+// carousel dots
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: @linkColorAB !important;
+}
+
+.cards-carousel .slick-dots li button:before {
+  width: 13px !important;
+  height: 13px !important;
+  border-color: @linkColorAB !important;
+}
+
+// Button
+.call-to-action>.ui.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 1px #F26119 inset;
+  color: #F26119;
+  border-radius: 6px;
+}
+
+.call-to-action>.ui.button:hover {
+  background-color: #F26119;
+  color: #FFF;
+}

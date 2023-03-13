@@ -1,0 +1,29 @@
+/*******************************
+         Site Settings
+*******************************/
+
+@import '@eeacms/volto-climate-advisory-board-policy/../theme/tokens/tokens';
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@primaryColor: #658f99;
+@secondaryColor: @green-4;
+
+@lightPrimaryColor: @green-5;
+@lightSecondaryColor: @green-4;
+
+@darkPrimaryColor: @green-6;
+@darkSecondaryColor: @green-6;
+
+@linkColor: @secondaryColor;
+@linkHoverColor: @primaryColor;
+@linkActiveColor: @linkHoverColor;
+
+@linkColorAB: #F26119;
+@linkHoverColorAB: #F26119;
+@linkActiveColorAB: #F26119;
+
+@cardImageHeight: 516px;
+@imageHeight: 516px;

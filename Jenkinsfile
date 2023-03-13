@@ -4,9 +4,9 @@ pipeline {
   environment {
         GIT_NAME = "volto-climate-advisory-board-policy"
         NAMESPACE = "@eeacms"
-        SONARQUBE_TAGS = "volto.eea.europa.eu"
+        SONARQUBE_TAGS = "volto.eea.europa.eu,climate-advisory-board.europa.eu"
         DEPENDENCIES = ""
-        VOLTO = "alpha"
+        // VOLTO = "alpha"
     }
 
   stages {
