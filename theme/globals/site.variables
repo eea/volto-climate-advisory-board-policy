@@ -20,3 +20,10 @@
 @linkColor: @secondaryColor;
 @linkHoverColor: @primaryColor;
 @linkActiveColor: @linkHoverColor;
+
+@linkColorAB: #F26119;
+@linkHoverColorAB: #F26119;
+@linkActiveColorAB: #F26119;
+
+@cardImageHeight: 516px;
+@imageHeight: 516px;
