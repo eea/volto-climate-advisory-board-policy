@@ -12,16 +12,23 @@
     "plone",
     "react"
   ],
+  "addons": [
+    "@eeacms/volto-eea-design-system",
+    "@eeacms/volto-eea-website-theme"
+  ],
+  "dependencies": {
+    "@eeacms/volto-eea-design-system": "*",
+    "@eeacms/volto-eea-website-theme": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:eea/volto-climate-advisory-board-policy.git"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@plone/scripts": "*",
     "@cypress/code-coverage": "^3.10.0",
-    "cypress-fail-fast": "^5.0.1",
+    "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress-fail-fast": "^5.0.1",
     "md5": "^2.3.0"
   },
   "scripts": {
