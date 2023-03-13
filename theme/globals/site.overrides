@@ -127,6 +127,43 @@ p.has--clear--both:empty {
 .cardsGallery a.ui.button:hover:before {
   background-color: @linkColorAB;
   color: #fff;
+// carousel image
+.slick-slide .ui.cards > .card:not(.rounded) > .image,
+.slick-slide .ui.card:not(.rounded) > .image {
+  height: @cardImageHeight !important;
+
+  img {
+    height: @imageHeight !important;
+    border-radius: 10px;
+  }
+}
+
+// carousel arrows
+.cards-carousel .next-arrow {
+  top: 40% !important;
+  right: -5rem !important;
+}
+
+.cards-carousel .prev-arrow {
+  top: 40% !important;
+  left: -5rem !important;
+}
+
+// carousel card
+.card .meta .date {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+// carousel dots
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: @linkColorAB !important;
+}
+
+.cards-carousel .slick-dots li button:before {
+  width: 13px !important;
+  height: 13px !important;
+  border-color: @linkColorAB !important;
 }
 
 // Button
