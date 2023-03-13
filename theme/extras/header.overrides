@@ -5,6 +5,7 @@
 }
 
 .eea.header > .main.bar > .ui.container {
+  position: relative;
   width: 100%;
   margin-right: 0 !important;
   margin-left: 0 !important;
