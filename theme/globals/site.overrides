@@ -18,22 +18,28 @@ a {
   }
 }
 
+// reports arrow
 p.has--clear--both:empty {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-a.ui.button {
+.cardsGallery a.ui.button {
   font-size: 0;
   visibility: hidden;
 }
 
-a.ui.button:before {
+.cardsGallery a.ui.button:before {
   padding: 0px 4px;
-  border: 2px solid #f26119;
+  border: 2px solid @linkColorAB;
   border-radius: 50%;
-  color: #f26119;
+  color: @linkColorAB;
   content: '➜';
   font-size: 20px;
   visibility: visible;
+}
+
+.cardsGallery a.ui.button:hover:before {
+  background-color: @linkColorAB;
+  color: #fff;
 }

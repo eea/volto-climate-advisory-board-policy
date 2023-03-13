@@ -1,0 +1,10 @@
+/*******************************
+        Header
+*******************************/
+
+@mainMenuItemColor: #658f99;
+@mainMenuItemFontWeight: 400;
+@tabletMainSectionHeight: 80px;
+@mobileMainSectionHeight: 80px;
+
+@topSectionBackground: #f0f4f5;
