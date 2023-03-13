@@ -1,6 +1,12 @@
+import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
 
 const applyConfig = (config) => {
+  config.settings.eea.headerOpts = {
+    ...config.settings.eea.headerOpts,
+    logo,
+  };
+
   config.settings.eea.footerOpts = {
     ...config.settings.eea.footerOpts,
     logoWhite,

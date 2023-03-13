@@ -97,13 +97,36 @@ a {
   &:active {
     color: @linkActiveColor;
   }
+
+  &:hover {
+    color: @linkHoverColor;
+  }
 }
 
+// reports arrow
 p.has--clear--both:empty {
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.cardsGallery a.ui.button {
+  font-size: 0;
+  visibility: hidden;
+}
+
+.cardsGallery a.ui.button:before {
+  padding: 0px 4px;
+  border: 2px solid @linkColorAB;
+  border-radius: 50%;
+  color: @linkColorAB;
+  content: '➜';
+  font-size: 20px;
+  visibility: visible;
+}
+
+.cardsGallery a.ui.button:hover:before {
+  background-color: @linkColorAB;
+  color: #fff;
 // carousel image
 .slick-slide .ui.cards > .card:not(.rounded) > .image,
 .slick-slide .ui.card:not(.rounded) > .image {

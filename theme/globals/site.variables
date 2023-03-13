@@ -8,7 +8,7 @@
     Brand Colors
 --------------------*/
 
-@primaryColor: @green-6;
+@primaryColor: #658f99;
 @secondaryColor: @green-4;
 
 @lightPrimaryColor: @green-5;
