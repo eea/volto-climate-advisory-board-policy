@@ -2,8 +2,93 @@
         Global Overrides
 *******************************/
 
+#icons>.columns-block .block-editor-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.columns-view>.column-grid>.column>div>.ui.items>.item {
+  background-color: transparent;
+}
+
+.ui.items>.item>.content p {
+  width: max-content;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+}
+
+
+#icons>.grid>.column>div>.ui>.item>.icon {
+  background-color: #F0F5F4;
+  border-radius: 50px;
+  min-height: 70px !important;
+  min-width: 70px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  width: fit-content;
+}
+
+.slate-editor-link {
+  text-decoration: none !important;
+}
+
+// Arrow Underline
+.text-left>a,
+.text-right>a,
+.text-center>a,
+p.styled-slate>a {
+  color: @linkColorAB;
+  line-height: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid @linkColorAB;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    content: '\25BA';
+    position: absolute;
+    top: 80%;
+    color: @linkColorAB;
+    right: -7px;
+  }
+
+  &:hover {
+    color: @linkHoverColorAB;
+  }
+
+  &:visited {
+    color: @linkColorAB;
+  }
+
+  &:active {
+    color: @linkActiveColorAB;
+  }
+}
+
+.text-left>.anchor,
+.text-center>.anchor,
+.text-right>.anchor {
+  border-bottom: none;
+
+  &:before {
+    content: none;
+  }
+}
+
 a {
   color: @linkColor;
+
+  &:hover {
+    color: @linkHoverColor;
+  }
 
   &:visited {
     color: @linkColor;
@@ -11,10 +96,6 @@ a {
 
   &:active {
     color: @linkActiveColor;
-  }
-
-  &:hover {
-    color: @linkHoverColor;
   }
 }
 
@@ -60,4 +141,17 @@ p.has--clear--both:empty {
   width: 13px !important;
   height: 13px !important;
   border-color: @linkColorAB !important;
+}
+
+// Button
+.call-to-action>.ui.button {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 1px #F26119 inset;
+  color: #F26119;
+  border-radius: 6px;
+}
+
+.call-to-action>.ui.button:hover {
+  background-color: #F26119;
+  color: #FFF;
 }

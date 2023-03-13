@@ -24,6 +24,9 @@
 @linkColorAB: #F26119;
 @linkHoverColorAB: #F26119;
 @linkActiveColorAB: #F26119;
+<<<<<<< HEAD
 
 @cardImageHeight: 516px;
 @imageHeight: 516px;
+=======
+>>>>>>> b416ebeb4a8b367e0379414fe4eb0b0269c37302
