@@ -2,17 +2,17 @@
         Global Overrides
 *******************************/
 
-#icons>.columns-block .block-editor-item {
+#icons > .columns-block .block-editor-item {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.columns-view>.column-grid>.column>div>.ui.items>.item {
+.columns-view > .column-grid > .column > div > .ui.items > .item {
   background-color: transparent;
 }
 
-.ui.items>.item>.content p {
+.ui.items > .item > .content p {
   width: max-content;
 }
 
@@ -21,15 +21,14 @@
   justify-content: center;
 }
 
-
-#icons>.grid>.column>div>.ui>.item>.icon {
-  background-color: #F0F5F4;
-  border-radius: 50px;
-  min-height: 70px !important;
-  min-width: 70px !important;
+#icons > .grid > .column > div > .ui > .item > .icon {
   display: flex;
-  justify-content: center;
+  min-width: 70px !important;
+  min-height: 70px !important;
   align-items: center;
+  justify-content: center;
+  background-color: #f0f5f4;
+  border-radius: 50px;
 }
 
 .description {
@@ -41,23 +40,23 @@
 }
 
 // Arrow Underline
-.text-left>a,
-.text-right>a,
-.text-center>a,
-p.styled-slate>a {
-  color: @linkColorAB;
-  line-height: 10px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid @linkColorAB;
+.text-left > a,
+.text-right > a,
+.text-center > a,
+p.styled-slate > a {
   position: relative;
   display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 2px solid @linkColorAB;
+  color: @linkColorAB;
+  line-height: 10px;
 
   &:before {
-    content: '\25BA';
     position: absolute;
     top: 80%;
-    color: @linkColorAB;
     right: -7px;
+    color: @linkColorAB;
+    content: '\25BA';
   }
 
   &:hover {
@@ -73,9 +72,9 @@ p.styled-slate>a {
   }
 }
 
-.text-left>.anchor,
-.text-center>.anchor,
-.text-right>.anchor {
+.text-left > .anchor,
+.text-center > .anchor,
+.text-right > .anchor {
   border-bottom: none;
 
   &:before {
@@ -127,14 +126,15 @@ p.has--clear--both:empty {
 .cardsGallery a.ui.button:hover:before {
   background-color: @linkColorAB;
   color: #fff;
-// carousel image
-.slick-slide .ui.cards > .card:not(.rounded) > .image,
-.slick-slide .ui.card:not(.rounded) > .image {
-  height: @cardImageHeight !important;
+  // carousel image
+  .slick-slide .ui.cards > .card:not(.rounded) > .image,
+  .slick-slide .ui.card:not(.rounded) > .image {
+    height: @cardImageHeight !important;
 
-  img {
-    height: @imageHeight !important;
-    border-radius: 10px;
+    img {
+      height: @imageHeight !important;
+      border-radius: 10px;
+    }
   }
 }
 
@@ -167,14 +167,14 @@ p.has--clear--both:empty {
 }
 
 // Button
-.call-to-action>.ui.button {
+.call-to-action > .ui.button {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 1px #F26119 inset;
-  color: #F26119;
   border-radius: 6px;
+  box-shadow: 0px 0px 0px 1px #f26119 inset;
+  color: #f26119;
 }
 
-.call-to-action>.ui.button:hover {
-  background-color: #F26119;
-  color: #FFF;
+.call-to-action > .ui.button:hover {
+  background-color: #f26119;
+  color: #fff;
 }
