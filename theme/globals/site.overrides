@@ -2,21 +2,7 @@
         Global Overrides
 *******************************/
 
-#icons > .columns-block .block-editor-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.columns-view > .column-grid > .column > div > .ui.items > .item {
-  background-color: transparent;
-}
-
-.ui.items > .item > .content p {
-  width: max-content;
-}
-
-#icons {
+#icons > .column-grid > .column {
   display: flex;
   justify-content: center;
 }
@@ -27,11 +13,14 @@
   min-height: 70px !important;
   align-items: center;
   justify-content: center;
-  background-color: #f0f5f4;
+  background-color: @contentBoxTertiaryBackground;
   border-radius: 50px;
 }
 
 .description {
+  p {
+    font-size: 20px;
+  }
   width: fit-content;
 }
 
@@ -84,6 +73,7 @@ p.styled-slate > a {
 
 a {
   color: @linkColor;
+  font-size: 15px;
 
   &:hover {
     color: @linkHoverColor;
@@ -114,11 +104,14 @@ p.has--clear--both:empty {
 }
 
 .cardsGallery a.ui.button:before {
-  padding: 0px 4px;
+  display: block;
+  width: 40px;
+  padding: 5px;
   border: 2px solid @linkColorAB;
   border-radius: 50%;
   color: @linkColorAB;
-  content: '➜';
+  content: url('./ahead.svg');
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 20px;
   visibility: visible;
 }
@@ -126,15 +119,32 @@ p.has--clear--both:empty {
 .cardsGallery a.ui.button:hover:before {
   background-color: @linkColorAB;
   color: #fff;
-  // carousel image
-  .slick-slide .ui.cards > .card:not(.rounded) > .image,
-  .slick-slide .ui.card:not(.rounded) > .image {
-    height: @cardImageHeight !important;
+  content: url('./ahead-white.svg');
+}
 
-    img {
-      height: @imageHeight !important;
-      border-radius: 10px;
-    }
+.cardsGallery {
+  .ui.four.cards > .card img {
+    filter: contrast(50%);
+  }
+
+  .ui.four.cards > .card img:hover {
+    filter: opacity(100%);
+  }
+}
+
+// carousel image
+.slick-slide .ui.cards > .card:not(.rounded) > .image,
+.slick-slide .ui.card:not(.rounded) > .image {
+  height: @cardImageHeight !important;
+
+  img {
+    height: @imageHeight !important;
+    border-radius: 10px;
+    filter: contrast(50%);
+  }
+
+  img:hover {
+    filter: opacity(100%);
   }
 }
 
@@ -166,15 +176,68 @@ p.has--clear--both:empty {
   border-color: @linkColorAB !important;
 }
 
-// Button
+// button
 .call-to-action > .ui.button {
-  background-color: transparent;
+  background-color: transparent !important;
   border-radius: 6px;
-  box-shadow: 0px 0px 0px 1px #f26119 inset;
-  color: #f26119;
+  box-shadow: 0px 0px 0px 1px @linkColorAB inset;
+  color: @linkColorAB;
 }
 
 .call-to-action > .ui.button:hover {
-  background-color: #f26119;
+  background-color: @linkColorAB !important;
   color: #fff;
+}
+
+// edit content-box for background
+.content-box.secondary,
+svg.secondary {
+  background-color: @contentBoxSecondaryBackground !important;
+  color: @contentBoxSecondaryColor !important;
+}
+
+svg.secondary > g {
+  fill: #000 !important;
+}
+
+.content-box.tertiary,
+svg.tertiary {
+  background-color: @contentBoxTertiaryBackground !important;
+  color: @contentBoxTertiaryColor !important;
+}
+
+svg.tertiary > g {
+  fill: #000 !important;
+}
+
+// titles and underline
+h3 {
+  font-size: 38px;
+  font-weight: 400;
+  -webkit-text-decoration: @textUnderlineColor solid underline;
+  text-decoration: 3px @textUnderlineColor solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+h3:hover {
+  -webkit-text-decoration: @linkColorAB solid underline;
+  text-decoration: 3px @linkColorAB solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 24px;
+}
+
+.content p,
+.conent div {
+  font-size: 15px;
 }

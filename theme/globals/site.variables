@@ -3,6 +3,8 @@
 *******************************/
 
 @import '@eeacms/volto-climate-advisory-board-policy/../theme/tokens/tokens';
+@importGoogleFonts: true;
+@fontName: 'Nimbus Sans';
 
 /*-------------------
     Brand Colors
@@ -21,9 +23,16 @@
 @linkHoverColor: @primaryColor;
 @linkActiveColor: @linkHoverColor;
 
-@linkColorAB: #F26119;
-@linkHoverColorAB: #F26119;
-@linkActiveColorAB: #F26119;
+@linkColorAB: #f26119;
+@linkHoverColorAB: #f26119;
+@linkActiveColorAB: #f26119;
 
 @cardImageHeight: 516px;
 @imageHeight: 516px;
+@textUnderlineColor: #9fbfb55c;
+
+@contentBoxSecondaryColor: #2a3954;
+@contentBoxSecondaryBackground: #f4faff;
+
+@contentBoxTertiaryColor: #2a3954;
+@contentBoxTertiaryBackground: #f0f4f5;
