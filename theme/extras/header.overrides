@@ -51,6 +51,19 @@
   border-bottom: 1px solid #e6e7e8;
 }
 
+.top.bar .divider.text {
+  color: @mainMenuItemColor;
+  font-weight: 400;
+}
+
+.top.bar .ui.dropdown i.chevron.down.icon {
+  color: @mainMenuItemColor;
+}
+
+.top.bar .ui.dropdown {
+  max-width: 440px;
+}
+
 .top.bar > .ui.container {
   z-index: 1;
   display: flex;
