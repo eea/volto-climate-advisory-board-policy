@@ -283,3 +283,90 @@ p {
 .conent div {
   font-size: 15px;
 }
+
+#members {
+  max-width: 65% !important;
+  margin: 150px 0;
+}
+
+#members > p{
+  max-width: 90%;
+  display: block;
+  margin: auto;
+}
+
+#latest{
+  max-width: 85% !important;
+  display: block;
+  margin: auto;
+}
+
+#news {
+  padding: 200px 0 300px 0;
+
+  h3{
+    padding-bottom: 50px;
+  }
+}
+
+#reports {
+  padding-bottom: 200px;
+
+  h3{
+    padding-bottom: 60px;
+  }
+}
+
+#legal .image {
+  float: right !important;
+}
+
+#legal .column .image-block-container > img {
+  width: 100%;
+  height: 870px;
+  object-fit: cover;
+}
+
+.ui.grid.column-grid {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.content-box.secondary{
+  margin-bottom: 0 !important;
+}
+
+.styled-group{
+  margin: 0;
+}
+
+.ui.basic.segment.content-area {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+
+.content-box .content-box-inner {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.content-box-inner > .columns-view > .column {
+  margin: 0 !important;
+}
+
+.ui.grid > .column:not(.row) {
+  padding: 0 !important;
+}
+
+.columns-view .ui.grid > .column-blocks-wrapper,
+.columns-view .ui.grid > .column-blocks-wrapper:not(.row) {
+  padding: 0 !important;
+}
+
+.column-blocks-wrapper .block {
+  margin-bottom: 0 !important;
+}
+
+.block.video.align.center, .block.image.align.center{
+  line-height: 0;
+}
