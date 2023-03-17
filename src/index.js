@@ -13,13 +13,13 @@ const applyConfig = (config) => {
     sites: [
       {
         link: 'https://www.eea.europa.eu/',
-        src: 'http://localhost:3001/static/media/eea-logo-white.da328514.svg',
+        src: '/static/media/eea-logo-white.da328514.svg',
         alt: 'EEA',
       },
       {
         alt: 'Climate and energy in the EU',
         link: 'https://climate-energy.eea.europa.eu/',
-        src: 'http://localhost:3001/static/media/energy.5a7173e6.svg',
+        src: '/static/media/energy.5a7173e6.svg',
       },
     ],
   };
