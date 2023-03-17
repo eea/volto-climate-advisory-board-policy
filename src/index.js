@@ -23,6 +23,10 @@ const applyConfig = (config) => {
       },
     ],
   };
+
+  config.settings.ab = {
+    noChildrenNavigation: ['/reports-and-publications', '/news', '/contact'],
+  };
   return config;
 };
 
