@@ -289,22 +289,22 @@ p {
   margin: 150px 0;
 }
 
-#members > p{
-  max-width: 90%;
+#members > p {
   display: block;
+  max-width: 90%;
   margin: auto;
 }
 
-#latest{
-  max-width: 85% !important;
+#latest {
   display: block;
+  max-width: 85% !important;
   margin: auto;
 }
 
 #news {
   padding: 200px 0 300px 0;
 
-  h3{
+  h3 {
     padding-bottom: 50px;
   }
 }
@@ -312,7 +312,7 @@ p {
 #reports {
   padding-bottom: 200px;
 
-  h3{
+  h3 {
     padding-bottom: 60px;
   }
 }
@@ -332,17 +332,17 @@ p {
   margin-bottom: 0 !important;
 }
 
-.content-box.secondary{
+.content-box.secondary {
   margin-bottom: 0 !important;
 }
 
-.styled-group{
+.styled-group {
   margin: 0;
 }
 
 .ui.basic.segment.content-area {
-  margin-top: 0px !important;
   padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 .content-box .content-box-inner {
@@ -367,6 +367,90 @@ p {
   margin-bottom: 0 !important;
 }
 
-.block.video.align.center, .block.image.align.center{
+.block.video.align.center,
+.block.image.align.center {
   line-height: 0;
+}
+
+.search-wrapper .search-input .ui.fluid.input {
+  width: var(--card-image-width, 285px);
+}
+
+.block.search .search-wrapper {
+  justify-content: flex-end;
+}
+
+.block.search .search-wrapper .search-input {
+  width: auto !important;
+}
+
+.block.search .search-wrapper .search-input .input input {
+  border: 1px solid #3c5485;
+  border-radius: 10px;
+}
+
+.facets .ui.basic.segment.facet {
+  border-top: 1.3px solid #bebebe;
+}
+
+.facets h3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox label:before {
+  border-radius: 5px;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox.checked label:before {
+  border-radius: 5px;
+}
+
+.checkbox-facet
+  .entries
+  .entry
+  .ui.checkbox:not(.toggle)
+  input:checked
+  ~ label:after {
+  background-color: #658f9996;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox input:checked ~ label:before {
+  border: 1px solid #b9b9b9;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox.checked input ~ label:after,
+.ui.checkbox input:checked .box:after {
+  border-radius: 5px;
+  content: '';
+}
+
+.ui.fluid.cards .ui.fluid.card {
+  border-radius: 10px;
+}
+
+.ui.fluid.cards .ui.fluid.card a.image img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.ui.fluid.cards .ui.fluid.card div.content {
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+
+.ui.fluid.cards .ui.fluid.card div.extra.content {
+  padding: 1em;
+  margin-bottom: 0;
+}
+
+.ui.fluid.cards .ui.fluid.card div.content div.meta {
+  position: absolute;
+  bottom: 1em;
+  width: 50%;
+  padding-top: 1em;
+  color: #a3a3a3;
+}
+
+.ui.fluid.cards .ui.fluid.card div.content div.meta span.text-right.date {
+  font-size: 14px;
 }
