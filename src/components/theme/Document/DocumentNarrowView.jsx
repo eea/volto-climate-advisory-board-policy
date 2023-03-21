@@ -1,6 +1,6 @@
 /**
  * Document view component.
- * @module components/theme/View/HomePageView
+ * @module components/theme/Document/DocumentNarrowView
  */
 
 import React from 'react';
@@ -13,7 +13,7 @@ import { hasBlocksData } from '@plone/volto/helpers';
 
 /**
  * Component to display the default view.
- * @function HomePageView
+ * @function DocumentNarrowView
  * @param {Object} content Content object.
  * @returns {string} Markup of the component.
  */
