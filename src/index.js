@@ -46,6 +46,20 @@ const applyConfig = (config) => {
         );
       },
     },
+    {
+      id: 'content-box-blue',
+      title: 'Blue',
+      previewComponent: () => (
+        <Icon name={contentBoxSVG} size="88px" className="blue" />
+      ),
+      viewComponent: (props) => {
+        return (
+          <div className="content-box blue">
+            <div className="content-box-inner">{props.children}</div>
+          </div>
+        );
+      },
+    },
   ];
 
   return config;

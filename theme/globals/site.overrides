@@ -3,6 +3,7 @@
 *******************************/
 
 @import '../extras/keys-preset.less';
+@import '../extras/blue-preset.less';
 
 #icons > .column-grid > .column {
   display: flex;
