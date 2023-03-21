@@ -2,6 +2,7 @@ import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/im
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
 import { Icon } from '@plone/volto/components';
 import contentBoxSVG from './icons/content-box.svg';
+import paintSVG from '@plone/volto/icons/paint.svg';
 
 const applyConfig = (config) => {
   config.settings.eea.headerOpts = {
@@ -59,6 +60,14 @@ const applyConfig = (config) => {
           </div>
         );
       },
+    },
+  ];
+  config.settings.slate.styleMenu.blockStyles = [
+    ...config.settings.slate.styleMenu.blockStyles,
+    {
+      cssClass: 'orange',
+      label: 'Orange',
+      icon: (props) => <Icon name={paintSVG} size="18px" />,
     },
   ];
 
