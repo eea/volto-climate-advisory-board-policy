@@ -51,7 +51,6 @@ footer .footer-wrapper .menu .actions {
 .subfooter-info {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
   margin-top: 30px;
 }
 
@@ -72,12 +71,19 @@ footer .footer-wrapper .menu .actions {
   margin-right: 40px;
 }
 
-.subfooter .contact {
+.subfooter-social .subfooter {
+  margin-top: 11px;
+}
+
+.row .actions {
+  margin-bottom: 30px;
+}
+
+.subfooter.contact {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 15px;
   margin-right: 15px;
 }
 
@@ -86,7 +92,6 @@ footer .footer-wrapper .menu .actions {
 }
 
 .subfooter-contact-info {
-  margin-top: 15px;
   display: flex;
   flex-direction: row;
 }
