@@ -370,3 +370,32 @@ p {
 .block.video.align.center, .block.image.align.center{
   line-height: 0;
 }
+
+
+  [class~="document-narrow"] {
+
+    .ui.basic.segment.content-area {
+      margin-top: 10px !important;
+      padding-top: 10px !important;
+    }
+    [id="page-document"] > *,
+    #main .container_width,
+    #main .has--size--container_width
+      {
+      max-width: 85% !important;
+      }
+
+    .section-add,
+    .section-edit {
+      .container {
+        width: auto !important;
+        max-width: 85% !important;
+      }
+    }
+
+    .container > .blocks-form > .invisible > div > * {
+      max-width: var(--layout-max-width, 85%);
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
