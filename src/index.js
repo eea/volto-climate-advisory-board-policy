@@ -1,5 +1,6 @@
 import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
+import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
 
 const applyConfig = (config) => {
   config.settings.eea.headerOpts = {
@@ -27,6 +28,18 @@ const applyConfig = (config) => {
   config.settings.ab = {
     noChildrenNavigation: ['/reports-and-publications', '/news', '/contact'],
   };
+
+  // Custom Homepage layouts
+  config.views.layoutViews = {
+    ...(config.views.layoutViews || {}),
+    document_narrow_view: DocumentNarrowView,
+  };
+  config.views.layoutViewsNamesMapping = {
+    ...(config.views.layoutViewsNamesMapping || {}),
+    document_narrow_view: 'Document Narrow View',
+  };
+
+  config.settings.isMultilingual = false;
   return config;
 };
 
