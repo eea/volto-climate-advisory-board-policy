@@ -1,0 +1,43 @@
+.table-of-contents.default > h2 {
+  width: fit-content;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+  font-size: 1.5rem;
+}
+
+.table-of-contents.default ul.ui.list li:before,
+.ui.bulleted.list .list > .item:before,
+.ui.bulleted.list > .item:before {
+  content: '';
+}
+
+.table-of-contents.default ul.ui.list li,
+.ui.bulleted.list .list > .item,
+.ui.bulleted.list > .item {
+  width: fit-content;
+  padding: 10px 30px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.table-of-contents.default ul.ui.list li:first-child,
+.ui.bulleted.list .list > .item:first-child,
+.ui.bulleted.list > .item:first-child {
+  border-top: 1px solid #ebebeb;
+}
+
+.table-of-contents.default ul.ui.list,
+ol.ui.list,
+.ui.list {
+  padding-left: 0;
+  margin-top: 3px;
+}
+
+.table-of-contents.default .ui.list > .item a,
+.ui.list .list > .item a {
+  color: @tertiaryColor;
+}
+
+.table-of-contents.default .ui.list > .item a:hover,
+.ui.list .list > .item a:hover {
+  color: @orange-0;
+}

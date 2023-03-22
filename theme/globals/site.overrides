@@ -2,6 +2,11 @@
         Global Overrides
 *******************************/
 
+@import '../extras/keys-preset.less';
+@import '../extras/blue-preset.less';
+@import '../extras/table-of-contents.less';
+@import '../extras/slate-style-menu.less';
+
 #icons > .column-grid > .column {
   display: flex;
   justify-content: center;
@@ -72,7 +77,8 @@ p.styled-slate > a {
   }
 }
 
-a {
+// do not apply anchor styles to volto-anchor slug
+a:not(.anchor) {
   color: @linkColor;
   font-size: 15px;
 
@@ -454,3 +460,31 @@ p {
 .ui.fluid.cards .ui.fluid.card div.content div.meta span.text-right.date {
   font-size: 14px;
 }
+
+  [class~="document-narrow"] {
+
+    .ui.basic.segment.content-area {
+      margin-top: 10px !important;
+      padding-top: 10px !important;
+    }
+    [id="page-document"] > *,
+    #main .container_width,
+    #main .has--size--container_width
+      {
+      max-width: 85% !important;
+      }
+
+    .section-add,
+    .section-edit {
+      .container {
+        width: auto !important;
+        max-width: 85% !important;
+      }
+    }
+
+    .container > .blocks-form > .invisible > div > * {
+      max-width: var(--layout-max-width, 85%);
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
