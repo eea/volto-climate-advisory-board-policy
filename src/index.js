@@ -3,6 +3,7 @@ import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/asse
 import { Icon } from '@plone/volto/components';
 import contentBoxSVG from './icons/content-box.svg';
 import paintSVG from '@plone/volto/icons/paint.svg';
+import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
 
 const applyConfig = (config) => {
   config.settings.eea.headerOpts = {
@@ -71,6 +72,17 @@ const applyConfig = (config) => {
     },
   ];
 
+  // Custom Homepage layouts
+  config.views.layoutViews = {
+    ...(config.views.layoutViews || {}),
+    document_narrow_view: DocumentNarrowView,
+  };
+  config.views.layoutViewsNamesMapping = {
+    ...(config.views.layoutViewsNamesMapping || {}),
+    document_narrow_view: 'Document Narrow View',
+  };
+
+  config.settings.isMultilingual = false;
   return config;
 };
 
