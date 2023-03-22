@@ -72,7 +72,8 @@ p.styled-slate > a {
   }
 }
 
-a {
+// do not apply anchor styles to volto-anchor slug
+a:not(.anchor) {
   color: @linkColor;
   font-size: 15px;
 
