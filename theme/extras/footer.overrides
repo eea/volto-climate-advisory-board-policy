@@ -6,8 +6,18 @@
   background-image: none;
 }
 
-.footer-nav>li>a {
-  color: @linkColor;
+.footer-nav>li>a, .subfooter-contact-info > a{
+  &:hover {
+    color: white;
+  }
+
+  &:visited {
+    color: white;
+  }
+
+  &:active {
+    color: white;
+  }
 }
 
 .footer-nav {
