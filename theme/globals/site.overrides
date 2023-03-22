@@ -34,25 +34,14 @@
   text-decoration: none !important;
 }
 
-// Arrow Underline
+// Links Underline
 .text-left > a,
 .text-right > a,
 .text-center > a,
 p.styled-slate > a {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 12px;
-  border-bottom: 2px solid @linkColorAB;
   color: @linkColorAB;
-  line-height: 10px;
-
-  &:before {
-    position: absolute;
-    top: 80%;
-    right: -7px;
-    color: @linkColorAB;
-    content: '\25BA';
-  }
+  text-decoration: underline;
+  text-underline-offset: 5px;
 
   &:hover {
     color: @linkHoverColorAB;
@@ -237,6 +226,17 @@ p.has--clear--both:empty {
   color: #fff;
 }
 
+.call-to-action > .ui.button.inverted.default {
+  background-color: @linkColorAB !important;
+  box-shadow: none !important;
+  color: #fff;
+}
+
+.call-to-action > .ui.button.inverted.default:hover {
+  background-color: @linkColorAB !important;
+  color: #fff;
+}
+
 // edit content-box for background
 .content-box.secondary,
 svg.secondary {
@@ -259,7 +259,7 @@ svg.tertiary > g {
 }
 
 // titles and underline
-h3 {
+#page-document h3 {
   font-size: 38px;
   font-weight: 400;
   -webkit-text-decoration: @textUnderlineColor solid underline;
@@ -269,7 +269,7 @@ h3 {
   transition: 0.5s ease-out;
 }
 
-h3:hover {
+#page-document h3:hover {
   -webkit-text-decoration: @linkColorAB solid underline;
   text-decoration: 3px @linkColorAB solid underline;
   -webkit-text-underline-position: under;
@@ -277,11 +277,11 @@ h3:hover {
   transition: 0.5s ease-out;
 }
 
-h2 {
+#page-document h2 {
   font-size: 40px;
 }
 
-p {
+#page-document p {
   font-size: 24px;
 }
 
@@ -351,7 +351,8 @@ p {
   margin-top: 0px !important;
 }
 
-.content-box .content-box-inner {
+.content-box.secondary .content-box-inner, 
+.content-box.tertiary .content-box-inner {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
