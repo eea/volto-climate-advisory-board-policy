@@ -382,7 +382,7 @@ svg.tertiary > g {
     .context-navigation {
       overflow: hidden;
       padding: 0;
-      border-left: 2px solid #002d54;
+      border-left: 1px solid #3C5485;
       margin-bottom: 1.5rem;
       margin-left: 0.3em;
       list-style-type: none;
@@ -394,10 +394,18 @@ svg.tertiary > g {
         margin-bottom: 0;
         font-size: 18px;
         font-weight: 700;
+        display: none;
 
         &::before {
           display: none;
         }
+      }
+      .ui.list {
+        padding-bottom: 2.6rem;
+      }
+      
+      .ui.list > div:first-child > .content > a {
+        font-size: 22px;
       }
 
       .ui.list > .item > .content {
@@ -405,21 +413,23 @@ svg.tertiary > g {
       }
 
       .active.item>.content>a {
-        background-color: #e2e2e2;
-        color: #002d54;
-        font-weight: 500 ;
+        color: #3D5265;
+        font-weight: 700;
       }
       .active.item > .content > a:hover {
-        color: #002d54;
+        color: #3D5265;
       }
+     
       .item a {
         position: relative;
         display: block;
-        padding: 0.2rem 1rem;
-        color: #666;
-        font-size: 16px;
-        font-weight: 300;
-
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.015em;
+        color: #3D5265;
+        padding: 0.42rem 0 0.42rem 1.46rem;
       }
       .item a:hover {
         background: #fcfcfd;
