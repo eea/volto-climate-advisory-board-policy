@@ -1,0 +1,6 @@
+/*******************************
+        Cards
+*******************************/
+
+@roundedCardSize: 150px;
+@roundedCardDescriptionUnderlineColour: #608C95;
