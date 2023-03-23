@@ -1,12 +1,18 @@
 import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
 import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
+import installContextNavigationBlock from '@eeacms/volto-climate-advisory-board-policy/components/Blocks/ContextNavigation';
 
 const applyConfig = (config) => {
   config.settings.eea.headerOpts = {
     ...config.settings.eea.headerOpts,
     logo,
   };
+  // context navigation
+  config = [installContextNavigationBlock].reduce(
+    (acc, apply) => apply(acc),
+    config,
+  );
 
   config.settings.eea.footerOpts = {
     ...config.settings.eea.footerOpts,
@@ -40,6 +46,9 @@ const applyConfig = (config) => {
   };
 
   config.settings.isMultilingual = false;
+  if (config.blocks.blocksConfig.contextNavigation) {
+    config.blocks.blocksConfig.contextNavigation.restricted = false;
+  }
   return config;
 };
 
