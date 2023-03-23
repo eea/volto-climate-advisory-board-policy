@@ -16,12 +16,13 @@
 
 .ui.fluid.three.cards {
   .ui.card.rounded {
-    .description:last-child::before {
+    .description.organization-underline::before {
       content: '';
       width: 100px;
       height: 3px;
       background: @roundedCardDescriptionUnderlineColour;
       display: flex;
+      margin: 1rem auto;
       margin-top: 0.8rem;
       margin-bottom: 0.5rem;
     }
