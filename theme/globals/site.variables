@@ -40,3 +40,5 @@
 @containerWidth: 100%;
 
 @rem-space-4: 0;
+
+@bannerBackgroundColor: #658F99;
