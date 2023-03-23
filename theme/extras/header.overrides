@@ -106,6 +106,7 @@
 
 .search-ab {
   margin-left: 10px;
+  border-left: 1px solid @primaryColor;
 }
 
 .search-icon-ab {
@@ -140,6 +141,10 @@
 
 #language-switcher > .text {
   margin-top: 1px;
+}
+
+.search-ab > .ui.form {
+  padding-left: 10px;
 }
 
 .search-ab > .ui.form > .field.searchbox {
