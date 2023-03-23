@@ -1,0 +1,26 @@
+
+.ui.card.rounded {
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 150px;
+  }
+}
+
+.ui.fluid.three.cards {
+ 
+  .ui.cards.rounded > .card > .image {
+    display: flex;
+  } 
+  .ui.cards.rounded > .card > .image > img,
+  .ui.card.rounded > .image > img {
+    width: 150px;
+  }
+}
+.ui.card.rounded.has--text--center {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
