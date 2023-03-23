@@ -6,6 +6,7 @@
 @import '../extras/blue-preset.less';
 @import '../extras/table-of-contents.less';
 @import '../extras/slate-style-menu.less';
+@import '../extras/round-icons.less';
 
 #icons > .column-grid > .column {
   display: flex;

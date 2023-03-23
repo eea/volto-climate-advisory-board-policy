@@ -1,0 +1,47 @@
+/*******************************
+      Image with title
+*******************************/
+// Adding the default image css for image inside image-with-title
+.ui.cards > .card > .image {
+  display: flex;
+}
+
+.ui.card.rounded {
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: @roundedCardSize;
+  }
+}
+
+.ui.fluid.three.cards {
+  .ui.card.rounded {
+    .description:last-child::before {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: @roundedCardDescriptionUnderlineColour;
+      display: flex;
+      margin-top: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .content {
+      .header {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+  .ui.cards.rounded > .card > .image > img,
+  .ui.card.rounded > .image > img {
+    width: @roundedCardSize;
+  }
+}
+.ui.card.rounded.has--text--center {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
