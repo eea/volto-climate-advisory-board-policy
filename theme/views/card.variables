@@ -3,4 +3,4 @@
 *******************************/
 
 @roundedCardSize: 150px;
-@roundedCardDescriptionUnderlineColour: background: #608C95;
+@roundedCardDescriptionUnderlineColour: #608C95;
