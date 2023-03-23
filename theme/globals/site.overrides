@@ -65,6 +65,7 @@ p.styled-slate > a {
 // do not apply anchor styles to volto-anchor slug
 a:not(.anchor) {
   color: @linkColor;
+  font-size: 18px;
 
   &:hover {
     color: @linkHoverColor;
@@ -376,6 +377,58 @@ svg.tertiary > g {
   line-height: 0;
 }
 
+//override context navigation block styles
+.ui.container {
+    .context-navigation {
+      overflow: hidden;
+      padding: 0;
+      border-left: 2px solid #002d54;
+      margin-bottom: 1.5rem;
+      margin-left: 0.3em;
+      list-style-type: none;
+
+      .context-navigation-header {
+        display: flex;
+        border-bottom: none;
+        padding-left: 1rem;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 700;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .ui.list > .item > .content {
+        border-bottom: none;
+      }
+
+      .active.item>.content>a {
+        background-color: #e2e2e2;
+        color: #002d54;
+        font-weight: 500 ;
+      }
+      .active.item > .content > a:hover {
+        color: #002d54;
+      }
+      .item a {
+        position: relative;
+        display: block;
+        padding: 0.2rem 1rem;
+        color: #666;
+        font-size: 16px;
+        font-weight: 300;
+
+      }
+      .item a:hover {
+        background: #fcfcfd;
+        color: #002d54;
+        font-weight: 500;
+      }
+    }
+  }
+
 .search-wrapper .search-input .ui.fluid.input {
   width: var(--card-image-width, 285px);
 }
@@ -472,7 +525,23 @@ svg.tertiary > g {
     .ui.basic.segment.content-area {
       margin-top: 10px !important;
       padding-top: 10px !important;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
     }
+
+    [class~="container"] > [class*="styled-"] {
+      margin: 0.7rem 0;
+    }
+
+    #footer .footer-wrapper {
+      .ui.container {
+        
+        max-width: 85% !important;
+        width: 85%;
+      
+      }
+    }
+
     [id="page-document"] > *,
     #main .container_width,
     #main .has--size--container_width
