@@ -518,9 +518,17 @@ svg.tertiary > g {
 }
 
   [class~="document-narrow"] {
-    .eea.banner .gradient {
+    .eea.banner {
       background: @bannerBackgroundColor;
     }    
+
+    .eea.banner .gradient {
+      background: @bannerBackgroundGradient;
+    }
+  
+    .eea.banner > .image {
+      background: @bannerBackgroundImage;
+    }
 
     .ui.basic.segment.content-area {
       margin-top: 10px !important;
