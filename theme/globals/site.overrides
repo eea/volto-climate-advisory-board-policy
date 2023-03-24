@@ -543,6 +543,9 @@ svg.tertiary > g {
 
   .eea.banner > .image {
     background: @bannerBackgroundImage;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   }
   //banner narrow width
   .eea.banner .ui.container {
