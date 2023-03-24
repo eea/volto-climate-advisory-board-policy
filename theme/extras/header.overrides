@@ -84,8 +84,8 @@
 }
 
 .ui.image.eea-logo {
-  width: 88px;
-  height: 54px;
+  width: auto;
+  height: 80px;
   margin-top: 0;
 }
 
