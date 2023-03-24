@@ -2,11 +2,14 @@
         Global Overrides
 *******************************/
 
+@import '../views/search.less';
+
 @import '../extras/keys-preset.less';
 @import '../extras/blue-preset.less';
 @import '../extras/table-of-contents.less';
 @import '../extras/slate-style-menu.less';
 @import '../extras/round-icons.less';
+@import '../extras/sitemap.less';
 
 #icons > .column-grid > .column {
   display: flex;
@@ -539,12 +542,29 @@ svg.tertiary > g {
     .eea.banner > .image {
       background: @bannerBackgroundImage;
     }
+      //banner narrow width
+    .eea.banner .ui.container {
+      width: 85%;
+    }
+
+    //breadcrumbs styles TODO: move to breadcrumbs.overrides
+    .ui.breadcrumbs {
+      .ui.container {
+        width: 85%;
+      }
+    }
 
     .ui.basic.segment.content-area {
       margin-top: 10px !important;
       padding-top: 10px !important;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+    }
+
+    .subfooter-other {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      margin-left: 300px;
+      width: 650px;
     }
 
     [class~="container"] > [class*="styled-"] {
