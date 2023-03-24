@@ -28,8 +28,8 @@
 @linkHoverColorAB: #f26119;
 @linkActiveColorAB: #f26119;
 
-@cardImageHeight: 716px;
-@imageHeight: 716px;
+@cardImageHeight: 516px;
+@imageHeight: 516px;
 @textUnderlineColor: #9fbfb55c;
 
 @contentBoxSecondaryColor: #2a3954;
@@ -45,4 +45,8 @@
 @fontSize: 18px;
 @bannerBackgroundColor: #658f99;
 @bannerBackgroundGradient: transparent;
-@bannerBackgroundImage: linear-gradient(0deg,rgba(12,27,40,0.7) 10%, rgba(0,36,78,0) 100%);
+@bannerBackgroundImage: linear-gradient(
+  0deg,
+  rgba(12, 27, 40, 0.7) 10%,
+  rgba(0, 36, 78, 0) 100%
+);
