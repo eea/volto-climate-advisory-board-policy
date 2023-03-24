@@ -6,7 +6,6 @@ export const EditSchema = () => {
         id: 'default',
         title: 'Default',
         fields: [
-          'name',
           'root_node',
           'includeTop',
           'currentFolderOnly',
@@ -20,10 +19,6 @@ export const EditSchema = () => {
     ],
     required: [],
     properties: {
-      name: {
-        title: 'Title',
-        description: 'The title of the navigation tree',
-      },
       root_node: {
         title: 'Root node',
         description:

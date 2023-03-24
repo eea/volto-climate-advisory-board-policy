@@ -2,11 +2,21 @@
         Global Overrides
 *******************************/
 
+@import '../views/search.less';
+
 @import '../extras/keys-preset.less';
 @import '../extras/blue-preset.less';
 @import '../extras/table-of-contents.less';
 @import '../extras/slate-style-menu.less';
 @import '../extras/round-icons.less';
+@import '../extras/sitemap.less';
+
+body.siteroot .ui.basic.segment.content-area,
+body.with-title-block .ui.basic.segment.content-area,
+body.with-hero-block .ui.basic.segment.content-area {
+  padding-top: 0px;
+  margin-top: 0px;
+}
 
 #icons > .column-grid > .column {
   display: flex;
@@ -340,11 +350,6 @@ svg.tertiary > g {
   margin-bottom: 0 !important;
 }
 
-.ui.basic.segment.content-area {
-  padding-top: 0px !important;
-  margin-top: 0px !important;
-}
-
 .content-box.secondary .content-box-inner, 
 .content-box.tertiary .content-box-inner {
   padding-top: 0 !important;
@@ -382,7 +387,7 @@ svg.tertiary > g {
     .context-navigation {
       overflow: hidden;
       padding: 0;
-      border-left: 2px solid #002d54;
+      border-left: 1px solid #3C5485;
       margin-bottom: 1.5rem;
       margin-left: 0.3em;
       list-style-type: none;
@@ -394,10 +399,18 @@ svg.tertiary > g {
         margin-bottom: 0;
         font-size: 18px;
         font-weight: 700;
+        display: none;
 
         &::before {
           display: none;
         }
+      }
+      .ui.list {
+        padding-bottom: 1rem;
+      }
+      
+      .ui.list > div:first-child > .content > a {
+        font-size: 22px;
       }
 
       .ui.list > .item > .content {
@@ -405,21 +418,23 @@ svg.tertiary > g {
       }
 
       .active.item>.content>a {
-        background-color: #e2e2e2;
-        color: #002d54;
-        font-weight: 500 ;
+        color: #3D5265;
+        font-weight: 700;
       }
       .active.item > .content > a:hover {
-        color: #002d54;
+        color: #3D5265;
       }
+     
       .item a {
         position: relative;
         display: block;
-        padding: 0.2rem 1rem;
-        color: #666;
-        font-size: 16px;
-        font-weight: 300;
-
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.015em;
+        color: #3D5265;
+        padding: 0.42rem 0 0.42rem 1.46rem;
       }
       .item a:hover {
         background: #fcfcfd;
@@ -529,12 +544,29 @@ svg.tertiary > g {
     .eea.banner > .image {
       background: @bannerBackgroundImage;
     }
+      //banner narrow width
+    .eea.banner .ui.container {
+      width: 85%;
+    }
+
+    //breadcrumbs styles TODO: move to breadcrumbs.overrides
+    .ui.breadcrumbs {
+      .ui.container {
+        width: 85%;
+      }
+    }
 
     .ui.basic.segment.content-area {
-      margin-top: 10px !important;
-      padding-top: 10px !important;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+
+    .subfooter-other {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      margin-left: 300px;
+      width: 650px;
     }
 
     [class~="container"] > [class*="styled-"] {
