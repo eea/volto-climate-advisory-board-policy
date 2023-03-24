@@ -394,14 +394,13 @@ svg.tertiary > g {
         margin-bottom: 0;
         font-size: 18px;
         font-weight: 700;
-        display: none;
 
         &::before {
           display: none;
         }
       }
       .ui.list {
-        padding-bottom: 2.6rem;
+        padding-bottom: 1rem;
       }
       
       .ui.list > div:first-child > .content > a {
