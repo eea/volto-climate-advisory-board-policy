@@ -538,6 +538,17 @@ svg.tertiary > g {
     .eea.banner > .image {
       background: @bannerBackgroundImage;
     }
+      //banner narrow width
+    .eea.banner .ui.container {
+      width: 85%;
+    }
+
+    //breadcrumbs styles TODO: move to breadcrumbs.overrides
+    .ui.breadcrumbs {
+      .ui.container {
+        width: 85%;
+      }
+    }
 
     .ui.basic.segment.content-area {
       margin-top: 10px !important;
