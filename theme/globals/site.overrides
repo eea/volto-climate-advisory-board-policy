@@ -546,7 +546,6 @@ svg.tertiary > g {
     background-size: cover;
     background-repeat: no-repeat;
   }
-  }
   //banner narrow width
   .eea.banner .ui.container {
     width: 85%;
