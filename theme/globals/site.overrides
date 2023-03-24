@@ -316,7 +316,7 @@ svg.tertiary > g {
 }
 
 #news {
-  padding: 200px 0 300px 0;
+  padding: 150px 0 150px 0;
 
   h3 {
     padding-bottom: 50px;
@@ -324,7 +324,7 @@ svg.tertiary > g {
 }
 
 #reports {
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 
   h3 {
     padding-bottom: 60px;
@@ -612,4 +612,19 @@ svg.tertiary > g {
 .text-left a.ui.button.default:hover {
   background-color: @linkColorAB !important;
   color: #fff !important;
+}
+
+.hero-block-meta.text-left {
+  padding-bottom: 20px;
+}
+
+#latest h3,
+#legal h3,
+#members h3 {
+  font-size: 30px;
+}
+
+#reports .ui.fluid.cards .ui.fluid.card > a,
+.ui.fluid.cards .ui.fluid.card > a {
+  height: 250px;
 }
