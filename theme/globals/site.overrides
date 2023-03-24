@@ -11,6 +11,13 @@
 @import '../extras/round-icons.less';
 @import '../extras/sitemap.less';
 
+body.siteroot .ui.basic.segment.content-area,
+body.with-title-block .ui.basic.segment.content-area,
+body.with-hero-block .ui.basic.segment.content-area {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
 #icons > .column-grid > .column {
   display: flex;
   justify-content: center;
@@ -343,11 +350,6 @@ svg.tertiary > g {
   margin-bottom: 0 !important;
 }
 
-.ui.basic.segment.content-area {
-  padding-top: 0px !important;
-  margin-top: 0px !important;
-}
-
 .content-box.secondary .content-box-inner, 
 .content-box.tertiary .content-box-inner {
   padding-top: 0 !important;
@@ -555,8 +557,8 @@ svg.tertiary > g {
     }
 
     .ui.basic.segment.content-area {
-      margin-top: 10px !important;
-      padding-top: 10px !important;
+      margin-top: 10px;
+      padding-top: 10px;
     }
 
     .subfooter-other {

@@ -1,11 +1,3 @@
 .ui.container.hero-block-container {
   width: 85% !important;
 }
-
-
-body.with-hero-block {
-  .ui.basic.segment.content-area {
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-}
