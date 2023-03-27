@@ -54,6 +54,18 @@
 }
 
 @media only screen and (min-width: @computerBreakpoint) {
+  #mega-menu {
+    display: grid !important;
+  }
+
+  #mega-menu .ui.container {
+    align-content: center;
+  }
+
+  #mega-menu .ui.container .menu-content .ui.grid > .column {
+    padding: 0.5rem 0 !important;
+  }
+
   #mega-menu .tablet.only.mobile.only {
     display: none !important;
   }
