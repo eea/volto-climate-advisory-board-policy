@@ -8,3 +8,6 @@
 @mobileMainSectionHeight: 80px;
 
 @topSectionBackground: #f0f4f5;
+
+@burgerActionBackgroundColor: #38445E;
+@megaMenuBackgroundColor: #38445E;

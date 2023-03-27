@@ -35,7 +35,12 @@ const applyConfig = (config) => {
   };
 
   config.settings.ab = {
-    noChildrenNavigation: ['/reports-and-publications', '/news', '/contact'],
+    noChildrenNavigation: [
+      '/reports-and-publications',
+      '/news',
+      '/contact',
+      '/about/the-role-of-the-advisory-board',
+    ],
   };
 
   config.settings.pluggableStyles = [

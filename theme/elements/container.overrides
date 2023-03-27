@@ -1,3 +1,10 @@
 .ui.container.hero-block-container {
   width: 85% !important;
 }
+
+@media screen and (max-width: @computerBreakpoint) {
+  .eea.header > .main.bar > .ui.container {
+    margin-left: @mobileGutter !important;
+    margin-right: @mobileGutter !important;
+  }
+}
