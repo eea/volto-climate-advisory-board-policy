@@ -624,7 +624,6 @@ svg.tertiary > g {
   font-size: 30px;
 }
 
-#reports .ui.fluid.cards .ui.fluid.card > a,
-.ui.fluid.cards .ui.fluid.card > a {
+#reports .ui.fluid.cards .ui.fluid.card > a {
   height: 250px;
 }
