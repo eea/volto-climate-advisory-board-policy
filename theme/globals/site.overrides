@@ -10,6 +10,7 @@
 @import '../extras/slate-style-menu.less';
 @import '../extras/round-icons.less';
 @import '../extras/sitemap.less';
+@import '../extras/contentBox.less';
 
 body.siteroot .ui.basic.segment.content-area,
 body.with-title-block .ui.basic.segment.content-area,

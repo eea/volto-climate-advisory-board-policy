@@ -1,0 +1,24 @@
+@media screen and (max-width: @tabletBreakpoint) {
+  .content-box .content-box-inner {
+    .columns-view {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.columns-view {
+  .column.centered-column > div > * {
+    display: block;
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+    padding-left: 1rem;
+  
+    @media screen and (max-width: @tabletBreakpoint) {
+      width: 100%;
+      max-width: unset;
+      padding-left: 0;
+    }
+  }
+}
+

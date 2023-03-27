@@ -1,54 +1,32 @@
-.eea.header {
-  border-bottom: 1px solid @primaryColor;
-  background-color: #f0f4f5;
-  color: @primaryColor;
-}
+// Sticky eea header
 
-.eea.header > .main.bar > .ui.container {
-  position: relative;
-  width: 100%;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
-.eea.header > .main.bar > .ui.container > .ui.grid {
-  width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.navbar {
+.sticky-eea-header {
   z-index: 2;
-  width: 100%;
-  border-top: 1px solid @primaryColor;
+  background-color: #F0F4F5;
+}
+
+.sticky-eea-header > .ui.sticky {
+  background-color: #F0F4F5;
+  border-bottom: 1px solid @primaryColor;
   transition: ease-in 0.5s;
 }
 
-.navbar--fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
+.ui.stuck-container.fixed-container.sticky-eea-header.hidden {
+  pointer-events: none;
 }
 
-.navbar--static {
-  position: static;
-  top: 0;
-  left: 0;
-}
-
-.navbar--hidden {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
+.ui.stuck-container.fixed-container.sticky-eea-header.hidden > .ui.sticky {
   opacity: 0;
   transition: ease-out 0.5s;
 }
 
+.eea.header {
+  color: @primaryColor;
+}
+
 .top.bar {
   width: 100%;
-  border-bottom: 1px solid #e6e7e8;
+  border-bottom: 1px solid @mainMenuItemColor;
 }
 
 .top.bar .divider.text {
@@ -62,6 +40,52 @@
 
 .top.bar .ui.dropdown {
   max-width: 440px;
+}
+
+// Mega menu
+
+#mega-menu {
+  top: 100%;
+  padding: 2rem;
+}
+
+#main #mega-menu .mobile > .ui.accordion > .title:first-child {
+  display: flex;
+}
+
+@media only screen and (min-width: @computerBreakpoint) {
+  #mega-menu .tablet.only.mobile.only {
+    display: none !important;
+  }
+
+  .main.bar .ui.container .ui.text.menu {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: @tabletBreakpoint) {
+  #mega-menu {
+    max-height: calc(100vh - (42px + 117px));
+  }
+}
+
+@media (max-width: @tabletBreakpoint) {
+  #mega-menu {
+    padding: 2rem 1rem;
+  }
+}
+
+// EEA Header container
+
+.eea.header > .main.bar > .ui.container {
+  position: relative;
+  width: auto;
+}
+
+.eea.header > .main.bar > .ui.container > .ui.grid {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .top.bar > .ui.container {
@@ -149,7 +173,6 @@
 
 .search-ab > .ui.form > .field.searchbox {
   display: flex;
-  width: 100px;
   height: 80px;
   flex-direction: row-reverse;
   align-items: center;
@@ -166,47 +189,12 @@
 
 .search-ab > .ui.form > .field.searchbox > button {
   border: none;
-  margin-left: 1rem;
   background-color: transparent;
 }
 
-#mega-menu {
-  position: absolute;
-  z-index: 1000;
-  top: 80px;
-  right: 0;
-  overflow: auto;
-  width: 94%;
-  min-height: 160px;
-  max-height: calc(100vh - (42px + 69px));
-  padding: 1rem 0;
-  background: #0a3d61;
-  color: #ffffff;
-}
-
-@media only screen and (min-width: 992px) {
-  #mega-menu {
-    width: 100%;
-    max-height: calc(100vh - (34px + 160px));
-    padding: 1rem 0;
-  }
-
-  .main.bar .ui.container .ui.text.menu {
-    flex-wrap: nowrap;
-  }
-}
-
-@media (min-width: 768px) {
-  #mega-menu {
-    max-height: calc(100vh - (42px + 117px));
-    padding: 2.25rem;
-  }
-}
-
-@media (max-width: 992px) and (min-width: 450px) {
+@media (max-width: @computerBreakpoint) and (min-width: 450px) {
   .search-ab > .ui.form > .field.searchbox {
     display: flex;
-    width: 100px;
     justify-content: flex-start;
     margin-right: 1rem;
   }
@@ -222,13 +210,6 @@
   .header > .main.bar > .ui.container > .ui.grid > .right-menu {
     display: flex;
     justify-content: flex-end;
-  }
-
-  .eea.header > .main.bar > .ui.container {
-    position: relative;
-    width: 100%;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
   }
 
   .header > .main.bar > .ui.container > .ui.grid > .left-menu {
@@ -276,8 +257,6 @@
   .eea.header > .main.bar > .ui.container {
     position: relative;
     width: 100%;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
   }
 }
 
@@ -299,8 +278,6 @@
 
   .main.bar > .ui.container {
     position: relative;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
   }
 
   .burger-action.mobile {
@@ -320,7 +297,5 @@
 
   .eea.header > .main.bar > .ui.container {
     width: 100%;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
   }
 }
