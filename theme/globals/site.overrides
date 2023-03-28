@@ -167,7 +167,7 @@ p.has--clear--both:empty {
   background: #608c95;
   border-radius: 10px;
   content: '';
-  opacity: 42%;
+  opacity: 0.4 !important;
   transition: opacity 0.2s;
 }
 
@@ -203,7 +203,7 @@ p.has--clear--both:empty {
 .slick-slide .ui.cards > .card:not(.rounded):hover,
 .slick-slide .ui.card:not(.rounded):hover {
   .image:before {
-    opacity: 0;
+    opacity: 0 !important;
   }
 }
 
