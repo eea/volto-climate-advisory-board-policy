@@ -115,10 +115,6 @@
     }
   }
 
-  .text-right {
-    text-align: right;
-  }
-
   .menu a:hover{
     color: @orange-0;
   }
@@ -147,6 +143,14 @@
           margin-right: 0;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: @tabletBreakpoint) {
+  #footer {
+    .text-right {
+      text-align: left !important;
     }
   }
 }
