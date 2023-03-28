@@ -19,6 +19,10 @@ body.with-hero-block .ui.basic.segment.content-area {
   margin-top: 0px;
 }
 
+.ui.basic.segment.content-area {
+  z-index: 1;
+}
+
 [class~="view-defaultview"] .columns-view > .ui.grid {
   margin: 0;
 }
