@@ -6,6 +6,9 @@ import paintSVG from '@plone/volto/icons/paint.svg';
 import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
 import installContextNavigationBlock from '@eeacms/volto-climate-advisory-board-policy/components/Blocks/ContextNavigation';
 
+import eeaWhiteLogo from '../theme/assets/svg/eea-logo-white.svg';
+import energyWhiteLogo from '../theme/assets/svg/energy-logo-white.svg';
+
 const applyConfig = (config) => {
   config.settings.eea.headerOpts = {
     ...config.settings.eea.headerOpts,
@@ -23,13 +26,13 @@ const applyConfig = (config) => {
     sites: [
       {
         link: 'https://www.eea.europa.eu/',
-        src: '/static/media/eea-logo-white.da328514.svg',
+        src: eeaWhiteLogo,
         alt: 'EEA',
       },
       {
         alt: 'Climate and energy in the EU',
         link: 'https://climate-energy.eea.europa.eu/',
-        src: '/static/media/energy.5a7173e6.svg',
+        src: energyWhiteLogo,
       },
     ],
   };
