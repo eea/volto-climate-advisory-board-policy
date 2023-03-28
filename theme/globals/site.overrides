@@ -10,7 +10,6 @@
 @import '../extras/slate-style-menu.less';
 @import '../extras/round-icons.less';
 @import '../extras/sitemap.less';
-@import '../extras/contentBox.less';
 
 body.siteroot .ui.basic.segment.content-area,
 body.with-title-block .ui.basic.segment.content-area,
@@ -76,22 +75,22 @@ p.styled-slate > a {
 
 // do not apply anchor styles to volto-anchor slug
 a:not(.anchor) {
-  color: @linkColor;
+  color: @linkColorAB;
 
   &:hover {
-    color: @linkHoverColor;
+    color: @linkHoverColorAB;
   }
 
   &:visited {
-    color: @linkColor;
+    color: @linkColorAB;
   }
 
   &:active {
-    color: @linkActiveColor;
+    color: @linkActiveColorAB;
   }
 
   &:hover {
-    color: @linkHoverColor;
+    color: @linkHoverColorAB;
   }
 }
 
@@ -281,24 +280,6 @@ svg.tertiary > g {
   fill: #000 !important;
 }
 
-// titles and underline
-#page-document h3 {
-  font-weight: 400;
-  -webkit-text-decoration: @textUnderlineColor solid underline;
-  text-decoration: 3px @textUnderlineColor solid underline;
-  -webkit-text-underline-position: under;
-  text-underline-position: under;
-  transition: 0.5s ease-out;
-}
-
-#page-document h3:hover {
-  -webkit-text-decoration: @linkColorAB solid underline;
-  text-decoration: 3px @linkColorAB solid underline;
-  -webkit-text-underline-position: under;
-  text-underline-position: under;
-  transition: 0.5s ease-out;
-}
-
 #members {
   max-width: 65% !important;
   margin: 150px 0;
@@ -318,18 +299,10 @@ svg.tertiary > g {
 
 #news {
   padding: 150px 0 150px 0;
-
-  h3 {
-    padding-bottom: 50px;
-  }
 }
 
 #reports {
   padding-bottom: 150px;
-
-  h3 {
-    padding-bottom: 60px;
-  }
 }
 
 #legal .image {
@@ -464,11 +437,6 @@ svg.tertiary > g {
 
 .facets .ui.basic.segment.facet {
   border-top: 1.3px solid #bebebe;
-}
-
-.facets h3 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
 .checkbox-facet .entries .entry .ui.checkbox label:before {
@@ -619,12 +587,51 @@ svg.tertiary > g {
   padding-bottom: 20px;
 }
 
-#latest h3,
-#legal h3,
-#members h3 {
-  font-size: 30px;
-}
-
 #reports .ui.fluid.cards .ui.fluid.card > a {
   height: 250px;
+}
+
+// header links underline
+.main-menu .item.active a, .main-menu .item:focus-visible, .main-menu .item a:hover {
+  border-bottom: 4px solid #F26119;
+  color: #F26119
+  }
+
+// homepage titles underline
+#about h2,
+#latest h2,
+#legal h2,
+#members h2 {
+    -webkit-text-decoration: @textUnderlineColor solid underline;
+    text-decoration: 3px @textUnderlineColor solid underline;
+    -webkit-text-underline-position: under;
+    text-underline-position: under;
+    transition: 0.5s ease-out;
+}
+
+#about h2:hover,
+#latest h2:hover,
+#legal h2:hover,
+#members h2:hover {
+  -webkit-text-decoration: @linkColorAB solid underline;
+  text-decoration: 3px @linkColorAB solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+.cards-carousel .slick-track {
+  margin: 0 !important;
+}
+
+#latest .styled-slate.text-right {
+  padding-right: 30px;
+}
+
+.padding-20 {
+  padding-right: 20px;
+}
+
+.ui.container .context-navigation .ui.list>div:first-child>.content>a {
+  font-size: 18px !important;
 }
