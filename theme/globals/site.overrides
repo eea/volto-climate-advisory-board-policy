@@ -10,12 +10,17 @@
 @import '../extras/slate-style-menu.less';
 @import '../extras/round-icons.less';
 @import '../extras/sitemap.less';
+@import '../extras/contentBox.less';
 
 body.siteroot .ui.basic.segment.content-area,
 body.with-title-block .ui.basic.segment.content-area,
 body.with-hero-block .ui.basic.segment.content-area {
   padding-top: 0px;
   margin-top: 0px;
+}
+
+[class~="view-defaultview"] .columns-view > .ui.grid {
+  margin: 0;
 }
 
 #icons > .column-grid > .column {
@@ -144,13 +149,13 @@ p.has--clear--both:empty {
     display: block;
     background: #608c95;
     content: '';
-    opacity: 42%;
+    opacity: 0.4 !important;
     transition: opacity 0.2s;
   }
 
   .ui.four.cards > .card:hover {
     a.image:before {
-      opacity: 0;
+      opacity: 0 !important;
     }
   }
 }
@@ -195,7 +200,7 @@ p.has--clear--both:empty {
     background: #608c95;
     border-radius: 10px;
     content: '';
-    opacity: 42%;
+    opacity: 0.4 !important;
     transition: opacity 0.2s;
   }
 }
@@ -280,22 +285,34 @@ svg.tertiary > g {
   fill: #000 !important;
 }
 
-#members {
-  max-width: 65% !important;
-  margin: 150px 0;
-}
-
-#members > p {
-  display: block;
-  max-width: 90%;
-  margin: auto;
-}
-
 #latest {
   display: block;
   max-width: 85% !important;
   margin: auto;
 }
+// titles and underline
+#page-document h3 {
+  font-weight: 400;
+  -webkit-text-decoration: @textUnderlineColor solid underline;
+  text-decoration: 3px @textUnderlineColor solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+#page-document h3:hover {
+  -webkit-text-decoration: @linkColorAB solid underline;
+  text-decoration: 3px @linkColorAB solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+// #latest {
+//   display: block;
+//   max-width: 85% !important;
+//   margin: auto;
+// }
 
 #news {
   padding: 150px 0 150px 0;
@@ -492,13 +509,43 @@ svg.tertiary > g {
   color: #a3a3a3;
 }
 
+.eea.hero-block {
+  display: flex;
+  align-items: center;
+  min-height: 290px;
+
+  .hero-block-inner-wrapper {
+    width: 100%;
+  }
+}
+
 .hero-block-body .hero-block-text.color-fg-default div h2 {
   color: white;
 }
 
-.hero-block-body {
-  position: absolute;
-  bottom: 0;
+.hero-block-meta.text-left {
+  padding-bottom: 20px;
+}
+
+.text-left a.ui.button.default {
+  background-color: #fff;
+  border-radius: 28px;
+  color: @linkColorAB !important;
+}
+
+.text-left a.ui.button.default:hover {
+  background-color: @linkColorAB !important;
+  color: #fff !important;
+}
+
+#latest h3,
+#legal h3,
+#members h3 {
+  font-size: 30px;
+}
+
+#reports .ui.fluid.cards .ui.fluid.card > a {
+  height: 250px;
 }
 
 [class~='document-narrow'] {
@@ -532,36 +579,14 @@ svg.tertiary > g {
     padding-top: 10px;
   }
 
-  .subfooter-other {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin-left: 300px;
-    width: 650px;
-  }
-
   [class~='container'] > [class*='styled-'] {
     margin: 0.7rem 0;
-  }
-
-  #footer .footer-wrapper {
-    .ui.container {
-      max-width: 85% !important;
-      width: 85%;
-    }
-  }
-
-  [id='page-document'] > *,
-  #main .container_width,
-  #main .has--size--container_width {
-    max-width: 85% !important;
   }
 
   .section-add,
   .section-edit {
     .container {
       width: auto !important;
-      max-width: 85% !important;
     }
   }
 
@@ -583,30 +608,26 @@ svg.tertiary > g {
   color: #fff !important;
 }
 
-.hero-block-meta.text-left {
-  padding-bottom: 20px;
-}
-
 #reports .ui.fluid.cards .ui.fluid.card > a {
   height: 250px;
 }
 
 // header links underline
 .main-menu .item.active a, .main-menu .item:focus-visible, .main-menu .item a:hover {
-  border-bottom: 4px solid #F26119;
-  color: #F26119
-  }
+  border-bottom: 4px solid #F26119 !important;
+  color: #F26119 !important;
+}
 
 // homepage titles underline
 #about h2,
 #latest h2,
 #legal h2,
 #members h2 {
-    -webkit-text-decoration: @textUnderlineColor solid underline;
-    text-decoration: 3px @textUnderlineColor solid underline;
-    -webkit-text-underline-position: under;
-    text-underline-position: under;
-    transition: 0.5s ease-out;
+  -webkit-text-decoration: @textUnderlineColor solid underline;
+  text-decoration: 3px @textUnderlineColor solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
 }
 
 #about h2:hover,

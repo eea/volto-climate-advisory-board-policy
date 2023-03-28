@@ -1,10 +1,26 @@
-.ui.container.hero-block-container {
-  width: 85% !important;
+[class~="view-defaultview"] {
+  --container-text-width: @largeMonitorWidth;
 }
 
-@media screen and (max-width: @computerBreakpoint) {
-  .eea.header > .main.bar > .ui.container {
-    margin-left: @mobileGutter !important;
-    margin-right: @mobileGutter !important;
+.wide {
+  --large-monitor-width: 100%;
+
+  &.full-width  .columns-view,
+  .newsletter {
+    --toolbar-width: 0px;
+    --sidebar-width: 0px;
+    --scrollbar-width: 0px;
+    --large-monitor-gutter: 0px;
+    max-width: @largeMonitorWidth;
+    margin: 0 auto;
   }
+
+  @media screen and (min-width: @widescreenMonitorBreakpoint) {
+    --large-monitor-width: @widescreenMonitorBreakpoint;
+  }
+}
+
+.narrow {
+  --computer-width: @computerBreakpoint;
+  --container-text-width: @computerWidth;
 }

@@ -8,7 +8,8 @@
 .sticky-eea-header > .ui.sticky {
   background-color: #F0F4F5;
   border-bottom: 1px solid @primaryColor;
-  transition: ease-in 0.5s;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-in;
 }
 
 .ui.stuck-container.fixed-container.sticky-eea-header.hidden {
@@ -17,11 +18,16 @@
 
 .ui.stuck-container.fixed-container.sticky-eea-header.hidden > .ui.sticky {
   opacity: 0;
-  transition: ease-out 0.5s;
+  transition: opacity 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .eea.header {
   color: @primaryColor;
+
+  @media screen and (min-width: @siteBreakpoint) {
+    --large-monitor-width: @siteBreakpoint;
+  }
 }
 
 .top.bar {
@@ -47,6 +53,14 @@
 #mega-menu {
   top: 100%;
   padding: 2rem;
+
+  .ui.container {
+    width: 100%;
+  }
+
+  .ui.container .menu-content .ui.grid {
+    margin: 0;
+  }
 }
 
 #main #mega-menu .mobile > .ui.accordion > .title:first-child {
@@ -91,7 +105,6 @@
 
 .eea.header > .main.bar > .ui.container {
   position: relative;
-  width: auto;
 }
 
 .eea.header > .main.bar > .ui.container > .ui.grid {
@@ -109,10 +122,20 @@
   margin-right: 1rem !important;
 }
 
-.header > .main.bar > .ui.container > .ui.grid > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header > .main.bar > .ui.container > .ui.grid {
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > div:first-child {
+    justify-content: flex-start;
+  }
+
+  > div:last-child {
+    justify-content: flex-end;
+  }
 }
 
 .main.bar .ui.container {

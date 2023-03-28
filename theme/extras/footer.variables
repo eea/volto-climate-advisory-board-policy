@@ -2,7 +2,8 @@
             Footer
 *******************************/
 
-@mobileFooterBackgroundGrandient    : #38445E;
-@computerFooterBackgroundGrandient  : #38445E;
-@linkColor: #FFF;
-@linkVisitedColor: #FFF;
+@mobileFooterBackgroundGradient: #38445E;
+@computerFooterBackgroundGradient: #38445E;
+
+/* Wrapper */
+@wrapperBackgroundImage              : none;
