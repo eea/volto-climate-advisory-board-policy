@@ -14,7 +14,7 @@
     color: white;
   
     &:hover {
-      color: white;
+      color: @orange-0 !important;
     }
   
     &:visited {
@@ -46,6 +46,10 @@
     .social {
       margin: 0;
       justify-content: flex-start;
+      
+      a:hover {
+        color: @orange-0;
+      }
 
       > a:not(:last-child) {
         margin-right: 0.25rem;
@@ -87,6 +91,10 @@
 
       .theme-sites .logos .logo img {
         margin-bottom: 0;
+
+        &:hover{
+          filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg) brightness(101%) contrast(90%);
+        }
       }
     }
 
@@ -107,8 +115,13 @@
     }
   }
 
-  .text-right {
-    text-align: right;
+  .menu a:hover{
+    color: @orange-0;
+  }
+
+  .ab-footer:hover {
+    cursor: pointer;
+    filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg) brightness(101%) contrast(90%);
   }
 }
 
@@ -130,6 +143,14 @@
           margin-right: 0;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: @tabletBreakpoint) {
+  #footer {
+    .text-right {
+      text-align: left !important;
     }
   }
 }

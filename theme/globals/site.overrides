@@ -19,7 +19,12 @@ body.with-hero-block .ui.basic.segment.content-area {
   margin-top: 0px;
 }
 
-[class~="view-defaultview"] .columns-view > .ui.grid {
+.ui.basic.segment.content-area {
+  z-index: 1;
+}
+
+[class~="view-defaultview"] .columns-view > .ui.grid,
+[class~="view-viewview"] .columns-view > .ui.grid {
   margin: 0;
 }
 
@@ -548,53 +553,18 @@ svg.tertiary > g {
   height: 250px;
 }
 
-[class~='document-narrow'] {
-  .eea.banner {
-    background: @bannerBackgroundColor;
-  }
+.eea.banner {
+  background: @bannerBackgroundColor;
+}
 
-  .eea.banner .gradient {
-    background: @bannerBackgroundGradient;
-  }
+.eea.banner .gradient {
+  background: @bannerBackgroundGradient !important;
+}
 
-  .eea.banner > .image {
-    background: @bannerBackgroundImage;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  //banner narrow width
-  .eea.banner .ui.container {
-    width: 85%;
-  }
-
-  //breadcrumbs styles TODO: move to breadcrumbs.overrides
-  .ui.breadcrumbs {
-    .ui.container {
-      width: 85%;
-    }
-  }
-
-  .ui.basic.segment.content-area {
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-
-  [class~='container'] > [class*='styled-'] {
-    margin: 0.7rem 0;
-  }
-
-  .section-add,
-  .section-edit {
-    .container {
-      width: auto !important;
-    }
-  }
-
-  .container > .blocks-form > .invisible > div > * {
-    max-width: var(--layout-max-width, 85%);
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
+.eea.banner > .image {
+  background: @bannerBackgroundImage;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .text-left a.ui.button.default {
@@ -655,4 +625,29 @@ svg.tertiary > g {
 
 .ui.container .context-navigation .ui.list>div:first-child>.content>a {
   font-size: 18px !important;
+}
+
+[class~='document-narrow'] {
+
+  .ui.basic.segment.content-area {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  [class~='container'] > [class*='styled-'] {
+    margin: 0.7rem 0;
+  }
+
+  .section-add,
+  .section-edit {
+    .container {
+      width: auto !important;
+    }
+  }
+
+  .container > .blocks-form > .invisible > div > * {
+    max-width: var(--layout-max-width, 85%);
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
 }

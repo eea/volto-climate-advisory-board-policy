@@ -1,4 +1,5 @@
-[class~="view-defaultview"] {
+[class~="view-defaultview"],
+[class~="view-viewview"] {
   --container-text-width: @largeMonitorWidth;
 }
 
