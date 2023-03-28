@@ -292,7 +292,6 @@ svg.tertiary > g {
 
 #latest {
   display: block;
-  max-width: 85% !important;
   margin: auto;
 }
 // titles and underline
@@ -649,5 +648,20 @@ svg.tertiary > g {
     max-width: var(--layout-max-width, 85%);
     margin-right: auto !important;
     margin-left: auto !important;
+  }
+}
+
+@media screen and (max-width: @tabletBreakpoint) {
+  .ui.four.cards{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .ui.four.cards > .card {
+    width: 100% !important;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }
