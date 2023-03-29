@@ -29,6 +29,76 @@
   hr {
     margin: 2rem 0;
   }
+}
+
+.footer-nav {
+  padding-left: 0;
+}
+
+.footer-nav li {
+  display: inline-block;
+  padding: 0.8em 2em 0.8em 0;
+}
+
+.footer-nav .item {
+  font-weight: 600;
+}
+
+.ab-footer {
+  height: 80px;
+  width: fit-content;
+  margin-bottom: 1rem;
+  margin-left: 50px;
+}
+
+.subfooter .social {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.subfooter .social a i.icon {
+  font-size: 25px;
+}
+
+.menu {
+  margin-top: 35px;
+}
+
+footer .footer-wrapper .menu .actions {
+  justify-content: space-evenly;
+}
+
+.subfooter-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+
+    h5 {
+      color: white;
+  }
+}
+
+.subfooter-social,
+.subfooter-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.subfooter .item .contact-block {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.subfooter-contact {
+  padding-left: 60px;
+  margin-right: 40px;
+}
+
+.subfooter-social .subfooter {
+  margin-top: 11px;
+}
 
   .subfooter {
     display: flex;
