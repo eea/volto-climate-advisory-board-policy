@@ -23,6 +23,10 @@ body.with-hero-block .ui.basic.segment.content-area {
   z-index: 1;
 }
 
+body.with-newsletter-form .subfooter h5 {
+  color: white !important;
+}
+
 [class~="view-defaultview"] .columns-view > .ui.grid,
 [class~="view-viewview"] .columns-view > .ui.grid {
   margin: 0;

@@ -79,10 +79,6 @@ footer .footer-wrapper .menu .actions {
   }
 }
 
-body.with-newsletter-form .subfooter h5 {
-  color: white !important;
-}
-
 .subfooter-social,
 .subfooter-contact {
   display: flex;
