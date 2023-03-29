@@ -224,9 +224,12 @@
   background-color: transparent;
 }
 
-.eea.banner .gradient .content .title {
-  color: #FFF;
+body.with-newsletter-form .eea.banner .gradient .content {
+  .title,h1 {
+    color: #FFF;
+  }
 }
+
 @media (max-width: @computerBreakpoint) and (min-width: 450px) {
   .search-ab > .ui.form > .field.searchbox {
     display: flex;
