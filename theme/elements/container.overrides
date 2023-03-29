@@ -3,6 +3,10 @@
   --container-text-width: @largeMonitorWidth;
 }
 
+.block-editor-columnsBlock .full-width .ui.grid.column-grid {
+  margin: 0;
+}
+
 .wide {
   --large-monitor-width: 100%;
 

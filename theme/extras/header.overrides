@@ -114,12 +114,9 @@
 }
 
 .top.bar > .ui.container {
-  z-index: 1;
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 1rem !important;
 }
 
 .header > .main.bar > .ui.container > .ui.grid {
@@ -225,6 +222,12 @@
 .search-ab > .ui.form > .field.searchbox > button {
   border: none;
   background-color: transparent;
+}
+
+body.with-newsletter-form .eea.banner .gradient .content {
+  .title,h1 {
+    color: #FFF;
+  }
 }
 
 @media (max-width: @computerBreakpoint) and (min-width: 450px) {
