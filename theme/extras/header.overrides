@@ -173,10 +173,6 @@
   float: left;
 }
 
-.ui.image {
-  float: left;
-}
-
 .right-menu {
   justify-content: center;
 }
