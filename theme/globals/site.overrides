@@ -11,6 +11,7 @@
 @import '../extras/round-icons.less';
 @import '../extras/sitemap.less';
 @import '../extras/contentBox.less';
+@import '../extras/search-page.less';
 
 body.siteroot .ui.basic.segment.content-area,
 body.with-title-block .ui.basic.segment.content-area,
@@ -589,6 +590,12 @@ svg.tertiary > g {
 
 #reports .ui.fluid.cards .ui.fluid.card > a {
   height: 250px;
+}
+
+h1 a:not(.anchor),
+h2 a:not(.anchor) {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 // header links underline
