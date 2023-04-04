@@ -1,0 +1,84 @@
+//links underline
+.text-left > a,
+.text-right > a,
+.text-center > a,
+p.styled-slate > a {
+  color: @linkColorAB !important;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+
+  &:hover {
+    color: @linkHoverColorAB;
+  }
+
+  &:visited {
+    color: @linkColorAB;
+  }
+
+  &:active {
+    color: @linkActiveColorAB;
+  }
+}
+
+.text-left > .anchor,
+.text-center > .anchor,
+.text-right > .anchor {
+  border-bottom: none;
+
+  &:before {
+    content: none;
+  }
+}
+
+// titles and underline
+#page-document h3 {
+  font-weight: 400;
+  -webkit-text-decoration: @textUnderlineColor solid underline;
+  text-decoration: 3px @textUnderlineColor solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+#page-document h3:hover {
+  -webkit-text-decoration: @linkColorAB solid underline;
+  text-decoration: 3px @linkColorAB solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+// homepage titles underline
+#about h2,
+#latest h2,
+#legal h2,
+#members h2 {
+  -webkit-text-decoration: @textUnderlineColor solid underline;
+  text-decoration: 3px @textUnderlineColor solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+#about h2:hover,
+#latest h2:hover,
+#legal h2:hover,
+#members h2:hover {
+  -webkit-text-decoration: @linkColorAB solid underline;
+  text-decoration: 3px @linkColorAB solid underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+  transition: 0.5s ease-out;
+}
+
+h1 a:not(.anchor),
+h2 a:not(.anchor) {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+// header links underline
+.main-menu .item.active a, .main-menu .item:focus-visible, .main-menu .item a:hover {
+  border-bottom: 4px solid #F26119 !important;
+  color: #F26119 !important;
+}
