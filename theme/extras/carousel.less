@@ -1,0 +1,45 @@
+// carousel image
+.slick-slide .ui.cards > .card:not(.rounded),
+.slick-slide .ui.card:not(.rounded) {
+  .image {
+    position: relative;
+    height: @cardImageHeight !important;
+
+    img {
+      height: @imageHeight !important;
+      border-radius: 10px;
+    }
+  }
+}
+
+// carousel arrows
+.cards-carousel .next-arrow {
+  top: 40% !important;
+  right: -5rem !important;
+}
+
+.cards-carousel .prev-arrow {
+  top: 40% !important;
+  left: -5rem !important;
+}
+
+// carousel card
+.card .meta .date {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+// carousel dots
+.cards-carousel .slick-dots li.slick-active button:before {
+  background-color: @linkColorAB !important;
+}
+
+.cards-carousel .slick-dots li button:before {
+  width: 13px !important;
+  height: 13px !important;
+  border-color: @linkColorAB !important;
+}
+
+.cards-carousel .slick-track {
+  margin: 0 !important;
+}
