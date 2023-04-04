@@ -1,0 +1,30 @@
+.facets .ui.basic.segment.facet {
+  border-top: 1.3px solid #bebebe;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox label:before {
+  border-radius: 5px;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox.checked label:before {
+  border-radius: 5px;
+}
+
+.checkbox-facet
+  .entries
+  .entry
+  .ui.checkbox:not(.toggle)
+  input:checked
+  ~ label:after {
+  background-color: #658f9996;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox input:checked ~ label:before {
+  border: 1px solid #b9b9b9;
+}
+
+.checkbox-facet .entries .entry .ui.checkbox.checked input ~ label:after,
+.ui.checkbox input:checked .box:after {
+  border-radius: 5px;
+  content: '';
+}
