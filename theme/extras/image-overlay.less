@@ -1,31 +1,32 @@
 .cardsGallery {
-    .ui.four.cards > .card img {
-      position: relative;
-    }
-  
-    .ui.four.cards > .card a.image:before {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: block;
-      background: #608c95;
-      content: '';
+  .ui.four.cards > .card img {
+    position: relative;
+  }
+
+  .ui.four.cards > .card a.image:before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: #608c95;
+    content: '';
+    opacity: 0 !important;
+    transition: opacity 0.2s;
+  }
+
+  .ui.four.cards > .card:hover {
+    a.image:before {
       opacity: 0.4 !important;
-      transition: opacity 0.2s;
-    }
-  
-    .ui.four.cards > .card:hover {
-      a.image:before {
-        opacity: 0 !important;
-      }
     }
   }
-  
-  .slick-slide .ui.cards > .card .image:before,
-  .slick-slide .ui.card .image:before {
+}
+
+.slick-slide .ui.cards > .card:not(.rounded),
+.slick-slide .ui.card:not(.rounded) {
+  .image:before {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -36,7 +37,14 @@
     background: #608c95;
     border-radius: 10px;
     content: '';
-    opacity: 0.4 !important;
+    opacity: 0 !important;
     transition: opacity 0.2s;
   }
-  
+}
+
+.slick-slide .ui.cards > .card:not(.rounded):hover,
+.slick-slide .ui.card:not(.rounded):hover {
+  .image:before {
+    opacity: 0.4 !important;
+  }
+}

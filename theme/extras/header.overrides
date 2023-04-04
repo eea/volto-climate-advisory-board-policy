@@ -2,11 +2,11 @@
 
 .sticky-eea-header {
   z-index: 2;
-  background-color: #F0F4F5;
+  background-color: #f0f4f5;
 }
 
 .sticky-eea-header > .ui.sticky {
-  background-color: #F0F4F5;
+  background-color: #f0f4f5;
   border-bottom: 1px solid @primaryColor;
   transition: opacity 0.5s;
   transition-timing-function: ease-in;
@@ -221,8 +221,9 @@
 }
 
 body.with-newsletter-form .eea.banner .gradient .content {
-  .title,h1 {
-    color: #FFF;
+  .title,
+  h1 {
+    color: #fff;
   }
 }
 

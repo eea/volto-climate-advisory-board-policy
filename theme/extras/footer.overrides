@@ -12,15 +12,15 @@
   .footer-nav > li > a,
   .subfooter-contact-info > a {
     color: white;
-  
+
     &:hover {
       color: @orange-0 !important;
     }
-  
+
     &:visited {
       color: white;
     }
-  
+
     &:active {
       color: white;
     }
@@ -46,7 +46,7 @@
     .social {
       margin: 0;
       justify-content: flex-start;
-      
+
       a:hover {
         color: @orange-0;
       }
@@ -78,7 +78,7 @@
           align-items: center;
           padding-left: 0 !important;
           padding-right: 0 !important;
-          
+
           > a.logo {
             flex: 1;
 
@@ -92,8 +92,9 @@
       .theme-sites .logos .logo img {
         margin-bottom: 0;
 
-        &:hover{
-          filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg) brightness(101%) contrast(90%);
+        &:hover {
+          filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg)
+            brightness(101%) contrast(90%);
         }
       }
     }
@@ -115,13 +116,14 @@
     }
   }
 
-  .menu a:hover{
+  .menu a:hover {
     color: @orange-0;
   }
 
   .ab-footer:hover {
     cursor: pointer;
-    filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg) brightness(101%) contrast(90%);
+    filter: invert(55%) sepia(54%) saturate(6243%) hue-rotate(354deg)
+      brightness(101%) contrast(90%);
   }
 }
 
