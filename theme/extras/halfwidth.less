@@ -22,14 +22,14 @@
 .has--size--half_width_left {
   --m-gutter: 0px !important;
 
-  .newsletterBlock::before {
+  &.newsletterBlock::before {
     .full-width();
     position: absolute;
     z-index: -1;
   }
 
   @media @mobileUp {
-    .newsletterBlock {
+    &.newsletterBlock {
       position: relative;
     
       .newsletterBlockLeftSide {
