@@ -192,6 +192,7 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
     if (pathname !== activeItem) {
       setActiveItem(pathname);
     }
+    /* eslint-disable-next-line */
   }, [pathname]);
 
   useEffect(() => {
