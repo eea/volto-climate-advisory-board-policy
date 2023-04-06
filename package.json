@@ -20,10 +20,10 @@
     "@eeacms/volto-spotlight"
   ],
   "dependencies": {
-    "@eeacms/volto-hero-block": "*",
-    "@eeacms/volto-listing-block": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-hero-block": "*",
+    "@eeacms/volto-listing-block": "*",
     "@eeacms/volto-spotlight": "*"
   },
   "repository": {
