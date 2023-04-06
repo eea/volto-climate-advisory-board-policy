@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-climate-advisory-board-policy",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "@eeacms/volto-climate-advisory-board-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -20,10 +20,10 @@
     "@eeacms/volto-spotlight"
   ],
   "dependencies": {
-    "@eeacms/volto-hero-block": "*",
-    "@eeacms/volto-listing-block": "*",
     "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-hero-block": "*",
+    "@eeacms/volto-listing-block": "*",
     "@eeacms/volto-spotlight": "*"
   },
   "repository": {

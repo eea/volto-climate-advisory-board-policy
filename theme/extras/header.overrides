@@ -223,7 +223,7 @@ body.with-newsletter-form .eea.banner .gradient .content {
   }
 }
 
-@media (max-width: @computerBreakpoint) and (min-width: 450px) {
+@media (max-width: @computerBreakpoint) and (min-width: @mobileLandscapeBreakpoint) {
   .search-ab > .ui.form > .field.searchbox {
     display: flex;
     justify-content: flex-start;
@@ -254,20 +254,19 @@ body.with-newsletter-form .eea.banner .gradient .content {
   }
 }
 
-@media (max-width: 450px) and (min-width: 330px) {
+@media (max-width: @mobileLandscapeBreakpoint) and (min-width: @mobileBreakpoint) {
   .search-ab > .ui.form > .field.searchbox {
     display: flex;
-    width: 80px;
     justify-content: flex-start;
     margin-right: 1rem;
   }
 
-  .eea.header > .main.bar > .ui.container > .ui.grid {
-    margin-right: 0;
+  .search-ab > .ui.form {
+    padding-left: 10px;
   }
 
-  .search-ab > .ui.form > .field.searchbox > .ui.input > input {
-    width: 80px;
+  .eea.header > .main.bar > .ui.container > .ui.grid {
+    margin-right: 0;
   }
 
   .burger-action.mobile {
@@ -291,10 +290,9 @@ body.with-newsletter-form .eea.banner .gradient .content {
   }
 }
 
-@media (max-width: 330px) and (min-width: 200px) {
+@media (max-width: @mobileBreakpoint) {
   .search-ab > .ui.form > .field.searchbox {
     display: flex;
-    width: 60px;
     justify-content: flex-start;
     margin-right: 1rem;
   }
@@ -303,8 +301,8 @@ body.with-newsletter-form .eea.banner .gradient .content {
     margin-right: 0;
   }
 
-  .search-ab > .ui.form > .field.searchbox > .ui.input > input {
-    width: 60px;
+  .search-ab > .ui.form {
+    padding-left: 0;
   }
 
   .main.bar > .ui.container {

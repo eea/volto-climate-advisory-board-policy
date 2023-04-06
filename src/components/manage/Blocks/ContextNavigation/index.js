@@ -12,7 +12,7 @@ export default (config) => {
     view: ContextNavigationView,
     edit: ContextNavigationEdit,
     schema: BlockSettingsSchema,
-    restricted: true,
+    restricted: false,
     mostUsed: true,
     blockHasOwnFocusManagement: true,
     sidebarTab: 1,
