@@ -23,6 +23,8 @@
 @import '../extras/checkbox-facet.less';
 @import '../extras/search-wrapper.less';
 @import '../extras/banner.less';
+@import '../extras/widgets.less';
+@import '../extras/halfwidth.less';
 
 body.siteroot .ui.basic.segment.content-area,
 body.with-title-block .ui.basic.segment.content-area,
@@ -344,4 +346,11 @@ svg.tertiary > g {
 
 .contact-heading {
   font-size: 24px;
+}
+
+#about .column-grid > .column:first-child > *,
+#legal .column-grid > .column:first-child > * {
+  @media @mobileUp {
+    max-width: 500px;
+  }
 }

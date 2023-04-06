@@ -4,21 +4,40 @@ import { Icon } from '@plone/volto/components';
 import contentBoxSVG from './icons/content-box.svg';
 import paintSVG from '@plone/volto/icons/paint.svg';
 import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
-import installContextNavigationBlock from '@eeacms/volto-climate-advisory-board-policy/components/Blocks/ContextNavigation';
+import { addStylingFieldsetSchemaEnhancer } from '@eeacms/volto-climate-advisory-board-policy/components/manage/Blocks/schema';
+
+import installBlocks from './components/manage/Blocks';
 
 import eeaWhiteLogo from '../theme/assets/svg/eea-logo-white.svg';
 import energyWhiteLogo from '../theme/assets/svg/energy-logo-white.svg';
 
 const applyConfig = (config) => {
+  // Group
+  if (config.blocks.blocksConfig.group) {
+    config.blocks.blocksConfig.group.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
+  }
+
+  // Columns
+  if (config.blocks.blocksConfig.columnsBlock) {
+    config.blocks.blocksConfig.columnsBlock.mostUsed = true;
+    config.blocks.blocksConfig.columnsBlock.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
+  }
+
+  // Listing
+  if (config.blocks.blocksConfig.listing) {
+    config.blocks.blocksConfig.listing.title = 'Listing (Content)';
+    config.blocks.blocksConfig.listing.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
+  }
+
+  // Hero image left
+  if (config.blocks.blocksConfig.hero_image_left) {
+    config.blocks.blocksConfig.hero_image_left.schemaEnhancer = addStylingFieldsetSchemaEnhancer;
+  }
+
   config.settings.eea.headerOpts = {
     ...config.settings.eea.headerOpts,
     logo,
   };
-  // context navigation
-  config = [installContextNavigationBlock].reduce(
-    (acc, apply) => apply(acc),
-    config,
-  );
 
   config.settings.eea.footerOpts = {
     ...config.settings.eea.footerOpts,
@@ -95,7 +114,8 @@ const applyConfig = (config) => {
   if (config.blocks.blocksConfig.contextNavigation) {
     config.blocks.blocksConfig.contextNavigation.restricted = false;
   }
-  return config;
+
+  return [installBlocks].reduce((acc, apply) => apply(acc), config);
 };
 
 export default applyConfig;
