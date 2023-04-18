@@ -9,7 +9,6 @@ import { addStylingFieldsetSchemaEnhancer } from '@eeacms/volto-climate-advisory
 import installBlocks from './components/manage/Blocks';
 
 import eeaWhiteLogo from '../theme/assets/svg/eea-logo-white.svg';
-import energyWhiteLogo from '../theme/assets/svg/energy-logo-white.svg';
 
 const applyConfig = (config) => {
   // Group
