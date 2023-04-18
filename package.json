@@ -1,9 +1,9 @@
 {
   "name": "@eeacms/volto-climate-advisory-board-policy",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "@eeacms/volto-climate-advisory-board-policy: Volto add-on",
   "main": "src/index.js",
-  "author": "European Environment Agency: IDM2 A-Team",
+  "author": "European Environment Agency",
   "license": "MIT",
   "homepage": "https://github.com/eea/volto-climate-advisory-board-policy",
   "keywords": [

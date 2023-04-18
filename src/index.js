@@ -9,7 +9,6 @@ import { addStylingFieldsetSchemaEnhancer } from '@eeacms/volto-climate-advisory
 import installBlocks from './components/manage/Blocks';
 
 import eeaWhiteLogo from '../theme/assets/svg/eea-logo-white.svg';
-import energyWhiteLogo from '../theme/assets/svg/energy-logo-white.svg';
 
 const applyConfig = (config) => {
   // Group
@@ -49,9 +48,9 @@ const applyConfig = (config) => {
         alt: 'EEA',
       },
       {
-        alt: 'Climate and energy in the EU',
-        link: 'https://climate-energy.eea.europa.eu/',
-        src: energyWhiteLogo,
+        alt: 'European Scientific Advisory Board on Climate Change',
+        link: 'https://climate-advisory-board.europa.eu/',
+        src: logoWhite,
       },
     ],
   };
