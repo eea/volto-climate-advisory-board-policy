@@ -49,9 +49,9 @@ const applyConfig = (config) => {
         alt: 'EEA',
       },
       {
-        alt: 'Climate and energy in the EU',
-        link: 'https://climate-energy.eea.europa.eu/',
-        src: energyWhiteLogo,
+        alt: 'European Scientific Advisory Board on Climate Change',
+        link: 'https://climate-advisory-board.europa.eu/',
+        src: logoWhite,
       },
     ],
   };
