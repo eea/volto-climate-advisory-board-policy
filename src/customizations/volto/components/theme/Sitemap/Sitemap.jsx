@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect, flattenToAppURL } from '@plone/volto/helpers';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from 'semantic-ui-react';
 import { Helmet, getBaseUrl } from '@plone/volto/helpers';
@@ -73,12 +73,15 @@ class Sitemap extends Component {
   renderActions = (actions) => {
     return (
       <ul>
-        {actions.map((action) => (
-          <li key={action.url}>
-            <Link to={action.url}>{action.title}</Link>
-            {action.actions && this.renderActions(action.actions)}
-          </li>
-        ))}
+        {actions.map((action) => {
+          const relativeUrl = flattenToAppURL(action.url);
+          return (
+            <li key={action.url}>
+              <Link to={relativeUrl}>{action.title}</Link>
+              {action.actions && this.renderActions(action.actions)}
+            </li>
+          );
+        })}
       </ul>
     );
   };
