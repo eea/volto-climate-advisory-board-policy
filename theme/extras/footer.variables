@@ -4,7 +4,6 @@
 
 @mobileFooterBackgroundGradient: #38445E;
 @computerFooterBackgroundGradient: #38445E;
-@image-max-width: 35%;
 
 /* Wrapper */
 @wrapperBackgroundImage              : none;
