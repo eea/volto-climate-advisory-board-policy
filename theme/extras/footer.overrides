@@ -85,10 +85,6 @@
             &:not(:last-child) {
               margin-right: 1rem;
             }
-
-            &:last-child {
-              max-width: @image-max-width;
-            }
           }
         }
       }

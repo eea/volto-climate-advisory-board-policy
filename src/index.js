@@ -1,5 +1,6 @@
 import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
+import energyLogoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/svg/energy-logo-white.svg';
 import { Icon } from '@plone/volto/components';
 import contentBoxSVG from './icons/content-box.svg';
 import paintSVG from '@plone/volto/icons/paint.svg';
@@ -48,9 +49,9 @@ const applyConfig = (config) => {
         alt: 'EEA',
       },
       {
-        alt: 'European Scientific Advisory Board on Climate Change',
-        link: 'https://climate-advisory-board.europa.eu/',
-        src: logoWhite,
+        alt: 'Climate and energy in the EU',
+        link: 'https://climate-energy.eea.europa.eu/',
+        src: energyLogoWhite,
       },
     ],
   };
