@@ -41,6 +41,9 @@
 @rem-space-4: 0;
 
 @fontSize: 18px;
+
+@h2 : unit((27 / @fontSize), rem);
+
 @bannerBackgroundColor: #658f99;
 @bannerBackgroundGradient: transparent;
 @bannerBackgroundImage: linear-gradient(
