@@ -5,7 +5,7 @@ import {
   hasNonValueOperation,
   hasDateOperation,
 } from '@plone/volto/components/manage/Blocks/Search/utils';
-import { filtered } from '../../../../../../../utils';
+import { filtered } from '@eeacms/volto-climate-advisory-board-policy/utils';
 
 const showFacet = (index) => {
   const { values } = index;
