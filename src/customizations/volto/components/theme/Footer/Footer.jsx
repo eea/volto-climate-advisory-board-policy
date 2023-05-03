@@ -3,13 +3,13 @@
  * @module components/theme/Footer/Footer
  */
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import EEAFooter from '@eeacms/volto-eea-design-system/ui/Footer/Footer';
 import FooterSites from './FooterSites';
 import FooterActions from './FooterActions';
-import { loadEuropaAnalyticsScript, startTrackPageView } from './helpers';
+import { loadEuropaAnalyticsScript } from './helpers';
 import { trackPageView } from './utils';
 import config from '@plone/volto/registry';
 import { Grid } from 'semantic-ui-react';
