@@ -1,19 +1,13 @@
 const doEuropaAnalyticsParams = () => {
-  const siteID =
-    window.env?.RAZZLE_EUROPA_ANALYTICS_SITE_ID;
+  const siteID = window.env?.RAZZLE_EUROPA_ANALYTICS_SITE_ID;
 
-  const sitePath = [
-    window.env?.RAZZLE_EUROPA_ANALYTICS_SITE_PATH
-  ];
+  const sitePath = [window.env?.RAZZLE_EUROPA_ANALYTICS_SITE_PATH];
 
-  const mode =
-    window.env?.RAZZLE_EUROPA_ANALYTICS_MODE
+  const mode = window.env?.RAZZLE_EUROPA_ANALYTICS_MODE;
 
-  const instance =
-    window.env?.RAZZLE_EUROPA_ANALYTICS_INSTANCE
+  const instance = window.env?.RAZZLE_EUROPA_ANALYTICS_INSTANCE;
 
-  const utility =
-    window.env?.RAZZLE_EUROPA_ANALYTICS_UTILITY
+  const utility = window.env?.RAZZLE_EUROPA_ANALYTICS_UTILITY;
   const result = {
     siteID,
     sitePath,
@@ -55,7 +49,6 @@ const loadEuropaAnalyticsScript = (callback) => {
     callback();
   }
 };
-
 
 const startTrackPageView = (callback) => {
   //check for loaded europaAnalytics script in dom scripts

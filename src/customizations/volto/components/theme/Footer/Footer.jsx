@@ -10,7 +10,7 @@ import EEAFooter from '@eeacms/volto-eea-design-system/ui/Footer/Footer';
 import FooterSites from './FooterSites';
 import FooterActions from './FooterActions';
 import { loadEuropaAnalyticsScript, startTrackPageView } from './helpers';
-import { trackPageView } from './utils'
+import { trackPageView } from './utils';
 import config from '@plone/volto/registry';
 import { Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
