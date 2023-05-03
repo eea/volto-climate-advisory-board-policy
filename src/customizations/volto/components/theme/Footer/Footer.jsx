@@ -3,16 +3,20 @@
  * @module components/theme/Footer/Footer
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import EEAFooter from '@eeacms/volto-eea-design-system/ui/Footer/Footer';
 import FooterSites from './FooterSites';
 import FooterActions from './FooterActions';
+import { loadEuropaAnalyticsScript, startTrackPageView } from './helpers';
+import { trackPageView } from './utils'
 import config from '@plone/volto/registry';
 import { Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
+loadEuropaAnalyticsScript(trackPageView);
 
 const Footer = () => {
   const { eea } = config.settings;
@@ -137,7 +141,6 @@ const Footer = () => {
           <FooterSites sites={eea.footerOpts.sites} />
         </div>
       </div>
-
       <FooterActions actions={actions} copyright={copyright} />
     </EEAFooter>
   );
