@@ -10,13 +10,12 @@ import EEAFooter from '@eeacms/volto-eea-design-system/ui/Footer/Footer';
 import FooterSites from './FooterSites';
 import FooterActions from './FooterActions';
 import { loadEuropaAnalyticsScript } from './helpers';
-import { trackPageView } from './utils';
 import config from '@plone/volto/registry';
 import { Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
-loadEuropaAnalyticsScript(trackPageView);
+loadEuropaAnalyticsScript();
 
 const Footer = () => {
   const { eea } = config.settings;
