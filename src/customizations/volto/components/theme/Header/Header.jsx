@@ -94,18 +94,19 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
     }
   };
 
-  const renderGlobalMenuItem = (item, { onClick }) => (
-    <a
-      href={item.url || '/'}
-      title={item.title}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e, item);
-      }}
-    >
-      {item.title}
-    </a>
-  );
+  const renderGlobalMenuItem = (item, { onClick }) =>
+    item.title !== 'Home' && (
+      <a
+        href={item.url}
+        title={item.title}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick(e, item);
+        }}
+      >
+        {item.title}
+      </a>
+    );
 
   const menuOnClick = (e, item) => {
     if (searchIsActive) setSearchIsActive(false);
@@ -289,22 +290,24 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
                       ref={desktopMenuRef}
                       id={'navigation'}
                     >
-                      {items.map((item) => (
-                        <Menu.Item
-                          name={item['@id'] || item.url}
-                          key={item['@id'] || item.url}
-                          active={
-                            activeItem.indexOf(item['@id']) !== -1 ||
-                            activeItem.indexOf(item.url) !== -1
-                          }
-                        >
-                          {renderGlobalMenuItem(item, {
-                            onClick: noChildrenNavigation.includes(item.url)
-                              ? redirectToPage
-                              : menuOnClick,
-                          })}
-                        </Menu.Item>
-                      ))}
+                      {items.map((item) => {
+                        return (
+                          <Menu.Item
+                            name={item['@id'] || item.url}
+                            key={item['@id'] || item.url}
+                            active={
+                              activeItem === item['@id'] ||
+                              activeItem === item.url
+                            }
+                          >
+                            {renderGlobalMenuItem(item, {
+                              onClick: noChildrenNavigation.includes(item.url)
+                                ? redirectToPage
+                                : menuOnClick,
+                            })}
+                          </Menu.Item>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -332,20 +335,22 @@ const EEAHeader = ({ pathname, token, items, history, subsite }) => {
               </Grid.Column>
             </Grid>
             <HeaderMenuPopUp
-              renderMenuItem={(item, options, props) => (
-                <UniversalLink
-                  href={item.url || '/'}
-                  title={item.nav_title || item.title}
-                  {...(options || {})}
-                  className={cx(options?.className, {
-                    active: item.url === router_pathname,
-                  })}
-                >
-                  {props?.iconPosition !== 'right' && props?.children}
-                  <span>{item.nav_title || item.title}</span>
-                  {props?.iconPosition === 'right' && props?.children}
-                </UniversalLink>
-              )}
+              renderMenuItem={(item, options, props) => {
+                return (
+                  <UniversalLink
+                    href={item.url || '/'}
+                    title={item.nav_title || item.title}
+                    {...(options || {})}
+                    className={cx(options?.className, {
+                      active: item.url === router_pathname,
+                    })}
+                  >
+                    {props?.iconPosition !== 'right' && props?.children}
+                    <span>{item.nav_title || item.title}</span>
+                    {props?.iconPosition === 'right' && props?.children}
+                  </UniversalLink>
+                );
+              }}
               activeItem={activeItem}
               menuItems={items}
               pathName={pathname}
