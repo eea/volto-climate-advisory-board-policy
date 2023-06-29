@@ -210,19 +210,21 @@ pipeline {
       steps {
           script {
             sh '''docker pull eeacms/gitflow'''
-            sh '''echo "Error" > checkresult.txt'''
-            sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt'''
+            try {
+            def result = sh(returnStdout: true, script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''').trim()
+            }
+            catch {
+               publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
+                           text: "${result}", conclusion: 'FAILURE',
+                           detailsURL: "${env.BUILD_URL}/display/redirect"
+            }
           }
         }
        post {
          always { 
-             publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
+             publishChecks name: 'SonarQube2', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
                            text: "Check here https://sonarqube.eea.europa.eu/projects?sort=-analysis_date&reliability=2&search=${env.GIT_NAME}-", conclusion: 'FAILURE',
-                           detailsURL: "${env.BUILD_URL}/display/redirect"
-             publishChecks name: 'SonarQube2', title: 'Sonarqube2 Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
-                           text: readFile(file: 'sonarqubecheck/checkresult.txt'), conclusion: 'FAILURE',
-                           detailsURL: "${env.BUILD_URL}/display/redirect"
-           
+                           detailsURL: "${env.BUILD_URL}/display/redirect"           
            
          }
        }
