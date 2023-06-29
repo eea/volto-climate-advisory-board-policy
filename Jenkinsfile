@@ -1,4 +1,3 @@
-def globalvariable=""
 pipeline {
   agent any
 
@@ -200,9 +199,6 @@ pipeline {
     }
 
     stage('SonarQube compare to master') {
-      environment {
-        CHECK_TEXT="default2"
-      }
       when {
         allOf {
           environment name: 'CHANGE_ID', value: ''
@@ -214,15 +210,21 @@ pipeline {
         node(label: 'docker') {
           script {
             sh '''docker pull eeacms/gitflow'''
-            globalvariable = sh (script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''', returnStdout: true).trim()
-           }
+            sh '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee -a checkresult.txt'''
+          
+          }
           }
         }
        post {
-         failure { 
-             publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch',
-                           text: "${globalvariable}", conclusion: 'FAILURE',
-                           detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
+         always { 
+             publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
+                           text: "Check here https://sonarqube.eea.europa.eu/projects?sort=-analysis_date&reliability=2&search=${env.GIT_NAME}-", conclusion: 'FAILURE',
+                           detailsURL: "${env.BUILD_URL}/display/redirect"
+             publishChecks name: 'SonarQube2', title: 'Sonarqube2 Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
+                           text: readFile(file: 'checkresult.txt'), conclusion: 'FAILURE',
+                           detailsURL: "${env.BUILD_URL}/display/redirect"
+           
+           
          }
        }
       }
