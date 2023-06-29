@@ -1,3 +1,4 @@
+def checktext="default1"
 pipeline {
   agent any
 
@@ -7,7 +8,6 @@ pipeline {
         SONARQUBE_TAGS = "volto.eea.europa.eu,climate-advisory-board.europa.eu"
         DEPENDENCIES = ""
         VOLTO = ""
-        CHECK_TEXT = "default"
     }
 
   stages {
@@ -200,6 +200,9 @@ pipeline {
     }
 
     stage('SonarQube compare to master') {
+      environment {
+        CHECK_TEXT="default2"
+      }
       when {
         allOf {
           environment name: 'CHANGE_ID', value: ''
@@ -210,7 +213,8 @@ pipeline {
       steps {
         node(label: 'docker') {
           script {
-            sh '''docker pull eeacms/gitflow'''     
+            sh '''docker pull eeacms/gitflow'''
+            checktext = "run2"
             env.CHECK_TEXT = "run"
             env.CHECK_TEXT = sh (script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''', returnStdout: true).trim()
            }
@@ -220,6 +224,9 @@ pipeline {
          failure { 
              publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'check develop vs master branch',
                            text: "${env.CHECK_TEXT}", conclusion: 'FAILURE',
+                           detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
+             publishChecks name: 'SonarQube2', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing with master branch',
+                           text: "${checktext}", conclusion: 'FAILURE',
                            detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
          }
        }
