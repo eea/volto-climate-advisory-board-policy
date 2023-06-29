@@ -7,7 +7,7 @@ pipeline {
         SONARQUBE_TAGS = "volto.eea.europa.eu,climate-advisory-board.europa.eu"
         DEPENDENCIES = ""
         VOLTO = ""
-        CHECK_TEXT = ""
+        CHECK_TEXT = "default"
     }
 
   stages {
@@ -216,6 +216,7 @@ pipeline {
                  script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e GIT_ORG="$GIT_ORG" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''',
                  returnStdout: true).trim()
            }
+           sh """echo $CHECK_TEXT"""
           }
         }
        post {
