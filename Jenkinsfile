@@ -214,14 +214,13 @@ pipeline {
           script {
             sh '''docker pull eeacms/gitflow'''
             sh '''echo "Error" > checkresult.txt'''
-            try{
-              sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt'''
-            }
-            finally{
-               publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
+            catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+               sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt'''
+             }
+            
+             publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed ${currentBuild.currentResult}',
                            text: readFile(file: 'checkresult.txt'), conclusion: 'FAILURE',
                            detailsURL: "${env.BUILD_URL}/display/redirect"
-            }
           }
         }
        post {
