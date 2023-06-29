@@ -198,6 +198,24 @@ pipeline {
       }
     }
 
+    stage('SonarQube compare to master') {
+      when {
+        allOf {
+          environment name: 'CHANGE_ID', value: ''
+          branch 'develop'
+          not { changelog '.*^Automated release [0-9\\.]+$' }
+        }
+      }
+      steps {
+        node(label: 'docker') {
+          script {
+            sh '''docker pull eeacms/gitflow'''
+            sh '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e GIT_ORG="$GIT_ORG" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh'''
+           }
+          }
+        }
+      }
+    
     stage('Pull Request') {
       when {
         not {
