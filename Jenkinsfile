@@ -214,6 +214,13 @@ pipeline {
            }
           }
         }
+       post {
+         failure { 
+             publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'check develop vs master branch',
+                           text: 'Check SonarQube',
+                           detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
+         }
+       }
       }
     
     stage('Pull Request') {
