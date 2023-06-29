@@ -211,17 +211,16 @@ pipeline {
           script {
             sh '''docker pull eeacms/gitflow'''
             
-            SONARQUBE_RESULT = sh (
+            env.SONARQUBE_RESULT = sh (
                  script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e GIT_ORG="$GIT_ORG" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''',
-                          returnStdout: true
-                             ).trim()
+                 returnStdout: true).trim()
            }
           }
         }
        post {
          failure { 
              publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'check develop vs master branch',
-                           text: "${SONARQUBE_RESULT}", conclusion: 'FAILURE',
+                           text: "${env.SONARQUBE_RESULT}", conclusion: 'FAILURE',
                            detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
          }
        }
