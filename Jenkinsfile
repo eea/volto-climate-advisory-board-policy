@@ -199,6 +199,7 @@ pipeline {
     }
 
     stage('SonarQube compare to master') {
+      agent { label 'docker' }
       when {
         allOf {
           environment name: 'CHANGE_ID', value: ''
@@ -207,20 +208,14 @@ pipeline {
         }
       }
       steps {
-        node(label: 'docker') {
           script {
             sh '''docker pull eeacms/gitflow'''
-            try{
-              sh '''echo "Error" > checkresult.txt'''
-              sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt'''
-            } finally {
-              stash name: "sonarqubecheck", includes: "checkresult.txt", allowEmpty: false
-          }
+            sh '''echo "Error" > checkresult.txt'''
+            sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt'''
           }
         }
        post {
          always { 
-             unstash sonarqubecheck
              publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
                            text: "Check here https://sonarqube.eea.europa.eu/projects?sort=-analysis_date&reliability=2&search=${env.GIT_NAME}-", conclusion: 'FAILURE',
                            detailsURL: "${env.BUILD_URL}/display/redirect"
