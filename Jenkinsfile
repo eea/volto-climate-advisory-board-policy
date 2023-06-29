@@ -219,9 +219,9 @@ pipeline {
           }
         }
        post {
-         always { 
+         failed { 
              publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'check develop vs master branch',
-                           text: $SONARQUBE_RESULT, conclusion: 'FAILURE',
+                           text: "${SONARQUBE_RESULT}", conclusion: 'FAILURE',
                            detailsURL: "https://sonarqube.eea.europa.eu/dashboard?id=${env.GIT_NAME}-develop"
          }
        }
