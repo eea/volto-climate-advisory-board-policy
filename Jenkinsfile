@@ -213,7 +213,7 @@ pipeline {
             try {
             def result = sh(returnStdout: true, script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''').trim()
             }
-            catch {
+            catch (Exception e) {
                publishChecks name: 'SonarQube', title: 'Sonarqube Quality Check', summary: 'Quality check on branch develop, comparing it with master branch. No bugs allowed.',
                            text: "${result}", conclusion: 'FAILURE',
                            detailsURL: "${env.BUILD_URL}/display/redirect"
