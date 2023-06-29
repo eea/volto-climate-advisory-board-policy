@@ -210,13 +210,10 @@ pipeline {
       steps {
         node(label: 'docker') {
           script {
-            sh '''docker pull eeacms/gitflow'''
-            
-            env.CHECK_TEXT = sh (
-                 script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e GIT_ORG="$GIT_ORG" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''',
-                 returnStdout: true).trim()
+            sh '''docker pull eeacms/gitflow'''     
+            env.CHECK_TEXT = "run"
+            env.CHECK_TEXT = sh (script: '''docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh''', returnStdout: true).trim()
            }
-           sh """echo $CHECK_TEXT"""
           }
         }
        post {
