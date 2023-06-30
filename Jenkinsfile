@@ -212,7 +212,7 @@ pipeline {
             sh '''docker pull eeacms/gitflow'''
             sh '''echo "Error" > checkresult.txt'''
             catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-               sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | tee checkresult.txt; sed -i '/Found script/d' checkresult.txt'''
+               sh '''set -o pipefail; docker run -i --rm --name="$BUILD_TAG-gitflow-sn" -e GIT_BRANCH="$BRANCH_NAME" -e GIT_NAME="$GIT_NAME" eeacms/gitflow /checkSonarqubemaster.sh | grep -v "Found script" | tee checkresult.txt'''
              }
             
              publishChecks name: 'SonarQube', title: 'Sonarqube Code Quality Check', summary: "Quality check on the SonarQube metrics from branch develop, comparing it with the ones from master branch. No bugs are allowed",
