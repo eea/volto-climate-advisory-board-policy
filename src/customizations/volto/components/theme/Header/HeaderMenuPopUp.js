@@ -141,7 +141,9 @@ const SecondLevelContent = ({ element, topics = false, renderMenuItem }) => {
       (element) => element.url.indexOf('in-depth') !== -1,
     );
     // eslint-disable-next-line no-unused-expressions
-    inDepth ? (inDepth.nav_title = 'A-Z Topics') : '';
+    if (inDepth) {
+      inDepth.nav_title = 'A-Z Topics';
+    }
     content = (
       <List>
         {atAGlance &&
