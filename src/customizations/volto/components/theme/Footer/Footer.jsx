@@ -51,7 +51,7 @@ const Footer = () => {
     ? socialActions.map((action) => ({
         name: action.id,
         icon: action.icon,
-        link: action.url,
+        url: action.url,
       }))
     : eea.footerOpts.social;
 
