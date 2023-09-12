@@ -8,9 +8,7 @@ describe('Blocks Tests', () => {
     // Change page title
     cy.clearSlateTitle();
     cy.getSlateTitle().type('My Add-on Page');
-
     cy.get('.documentFirstHeading').contains('My Add-on Page');
-
     cy.getSlate().click();
 
     // Add block
