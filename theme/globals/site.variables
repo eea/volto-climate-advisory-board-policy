@@ -42,7 +42,8 @@
 
 @fontSize: 18px;
 
-@h2 : unit((27 / @fontSize), rem);
+@h2: 1.75rem;
+@h3: 1.35rem;
 
 @bannerBackgroundColor: #658f99;
 @bannerBackgroundGradient: transparent;
