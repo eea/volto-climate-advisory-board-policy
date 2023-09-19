@@ -296,6 +296,11 @@ svg.tertiary > g {
   height: 250px;
 }
 
+#reports .cardsGallery .pagination.menu,
+#page-edit .cardsGallery .pagination.menu {
+  margin-top: 40px;
+}
+
 #latest .styled-slate.text-right {
   padding-right: 30px;
 }
