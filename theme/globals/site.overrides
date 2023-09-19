@@ -42,6 +42,7 @@ body.with-newsletter-form {
     color: white;
     font-weight: 700;
   }
+
   a {
     text-decoration: none;
   }
@@ -173,18 +174,18 @@ svg.tertiary > g {
     list-style-type: none;
 
     .context-navigation-header {
-      display: flex;
-      border-bottom: none;
+      display: none;
       padding-left: 1rem;
+      border-bottom: none;
       margin-bottom: 0;
       font-size: 18px;
       font-weight: 700;
-      display: none;
 
       &::before {
         display: none;
       }
     }
+
     .ui.list {
       padding-bottom: 1rem;
     }
@@ -201,6 +202,7 @@ svg.tertiary > g {
       color: #3d5265;
       font-weight: 700;
     }
+
     .active.item > .content > a:hover {
       color: #3d5265;
     }
@@ -208,14 +210,15 @@ svg.tertiary > g {
     .item a {
       position: relative;
       display: block;
+      padding: 0.42rem 0 0.42rem 1.46rem;
+      color: #3d5265;
+      font-size: 18px;
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 150%;
       letter-spacing: -0.015em;
-      color: #3d5265;
-      padding: 0.42rem 0 0.42rem 1.46rem;
+      line-height: 150%;
     }
+
     .item a:hover {
       background: #fcfcfd;
       color: #002d54;
@@ -252,8 +255,8 @@ svg.tertiary > g {
 
 .eea.hero-block {
   display: flex;
-  align-items: center;
   min-height: 290px;
+  align-items: center;
 
   .hero-block-inner-wrapper {
     width: 100%;
@@ -307,8 +310,8 @@ svg.tertiary > g {
 
 [class~='document-narrow'] {
   .ui.basic.segment.content-area {
-    margin-top: 10px;
     padding-top: 10px;
+    margin-top: 10px;
   }
 
   [class~='container'] > [class*='styled-'] {
@@ -331,16 +334,16 @@ svg.tertiary > g {
 
 @media screen and (max-width: @tabletBreakpoint) {
   .ui.four.cards {
-    margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 
   .ui.four.cards > .card {
     width: 100% !important;
     margin-top: 0.5rem;
+    margin-right: 0 !important;
     margin-bottom: 0.5rem;
     margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
 
@@ -352,5 +355,18 @@ svg.tertiary > g {
 #legal .column-grid > .column:first-child > * {
   @media @mobileUp {
     max-width: 500px;
+  }
+}
+
+#legal {
+  @media @mobile {
+    padding: 40px 20px;
+  }
+}
+
+#legal-mandate {
+  @media @mobile {
+    display: flex;
+    justify-content: center;
   }
 }

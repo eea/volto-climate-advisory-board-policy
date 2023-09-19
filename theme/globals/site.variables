@@ -28,8 +28,8 @@
 @linkHoverColorAB: #f26119;
 @linkActiveColorAB: #f26119;
 
-@cardImageHeight: 516px;
-@imageHeight: 516px;
+@cardImageHeight: 430px;
+@imageHeight: 430px;
 @textUnderlineColor: #9fbfb55c;
 
 @contentBoxSecondaryColor: #2a3954;
