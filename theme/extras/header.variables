@@ -11,3 +11,5 @@
 
 @burgerActionBackgroundColor: #38445E;
 @megaMenuBackgroundColor: #38445E;
+
+@megaMenuSubTitleCountriesNestedGridMarginTop: -1rem;
