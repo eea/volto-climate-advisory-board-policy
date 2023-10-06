@@ -12,6 +12,7 @@ export default () => {
           'quoted',
           'spaced',
           'inverted',
+          'hidePublishingDate',
           'buttonLabel',
           'buttonLink',
           'overlay',
@@ -54,6 +55,10 @@ export default () => {
         title: 'Inverted',
         type: 'boolean',
         defaultValue: true,
+      },
+      hidePublishingDate: {
+        title: 'Hide publishing date',
+        type: 'boolean',
       },
       buttonLabel: {
         title: 'Button label',

@@ -1,0 +1,3 @@
+@mobileHeroBlockBodyGap  : @rem-space-4;
+@tabletHeroBlockBodyGap  : @rem-space-6;
+@desktopHeroBlockBodyGap : @rem-space-6;
