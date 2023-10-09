@@ -34,7 +34,6 @@ const Metadata = ({ buttonLabel, buttonLink, inverted, styles }) => {
 };
 
 const View = (props) => {
-  console.log('here', props);
   const { data = {}, intl } = props;
   const { text, copyright, copyrightIcon, copyrightPosition } = data;
   const copyrightPrefix = config.blocks.blocksConfig.hero.copyrightPrefix || '';
