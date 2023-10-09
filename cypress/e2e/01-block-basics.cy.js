@@ -39,8 +39,8 @@ describe('Blocks Tests', () => {
 
     // Configure block
     cy.getSlate().click().type('Hero Block');
-    cy.get('.ui.checked.toggle.checkbox').contains('Full height').click();
-    cy.get('.ui.toggle.checkbox').contains('Hide publishing date').click();
+    cy.get('.ui.checkbox').contains('Full height').click();
+    cy.get('.ui.checkbox').contains('Hide publishing date').click();
 
     // Save
     cy.get('#toolbar-save').click();
