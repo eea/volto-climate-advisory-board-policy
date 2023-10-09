@@ -1,15 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
-import cx from 'classnames';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import isFunction from 'lodash/isFunction';
-import { Icon } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
-import {
-  BlockDataForm,
-  SidebarPortal,
-  UniversalLink,
-} from '@plone/volto/components';
+import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import SlateEditor from '@plone/volto-slate/editor/SlateEditor';
 import { handleKey } from '@plone/volto-slate/blocks/Text/keyboard';
@@ -21,8 +15,9 @@ import {
 import { defineMessages, injectIntl } from 'react-intl';
 import { createSlateHeader } from '@eeacms/volto-hero-block/helpers';
 import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
-import Copyright from '@eeacms/volto-hero-block/components/Blocks/Hero/Copyright';
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
+import HeroMetadata from './HeroMetadata';
+import HeroCopyright from './HeroCopyright';
 
 const messages = defineMessages({
   published: {
@@ -30,21 +25,6 @@ const messages = defineMessages({
     defaultMessage: 'Published',
   },
 });
-
-const Metadata = ({ buttonLabel, buttonLink, inverted, styles }) => {
-  const { buttonVariant } = styles || {};
-
-  return buttonLabel ? (
-    <UniversalLink
-      className={cx('ui button', buttonVariant, { inverted })}
-      href={buttonLink || ''}
-    >
-      {buttonLabel}
-    </UniversalLink>
-  ) : (
-    ''
-  );
-};
 
 const Edit = (props) => {
   const { slate } = config.settings;
@@ -130,19 +110,14 @@ const Edit = (props) => {
           />
         </Hero.Meta>
         <Hero.Meta {...data}>
-          <Metadata {...data} />
+          <HeroMetadata {...data} />
         </Hero.Meta>
-        {copyright ? (
-          <Copyright copyrightPosition={copyrightPosition}>
-            <Copyright.Prefix>{copyrightPrefix}</Copyright.Prefix>
-            <Copyright.Icon>
-              <Icon className={copyrightIcon} />
-            </Copyright.Icon>
-            <Copyright.Text>{copyright}</Copyright.Text>
-          </Copyright>
-        ) : (
-          ''
-        )}
+        <HeroCopyright
+          copyright={copyright}
+          copyrightIcon={copyrightIcon}
+          copyrightPosition={copyrightPosition}
+          copyrightPrefix={copyrightPrefix}
+        />
       </Hero>
 
       <SidebarPortal selected={selected}>

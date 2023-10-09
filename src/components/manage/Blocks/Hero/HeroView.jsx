@@ -1,15 +1,13 @@
 import React, { useCallback, useMemo } from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import { compose } from 'redux';
-import cx from 'classnames';
-import { Icon } from 'semantic-ui-react';
-import { UniversalLink } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import { serializeText } from '@eeacms/volto-hero-block/helpers';
 import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
-import Copyright from '@eeacms/volto-hero-block/components/Blocks/Hero/Copyright';
 import config from '@plone/volto/registry';
+import HeroMetadata from './HeroMetadata';
+import HeroCopyright from './HeroCopyright';
 
 const messages = defineMessages({
   published: {
@@ -17,21 +15,6 @@ const messages = defineMessages({
     defaultMessage: 'Published',
   },
 });
-
-const Metadata = ({ buttonLabel, buttonLink, inverted, styles }) => {
-  const { buttonVariant = 'white' } = styles || {};
-
-  return buttonLabel ? (
-    <UniversalLink
-      className={cx('ui button', buttonVariant, { inverted })}
-      href={buttonLink || ''}
-    >
-      {buttonLabel}
-    </UniversalLink>
-  ) : (
-    ''
-  );
-};
 
 const View = (props) => {
   const { data = {}, intl } = props;
@@ -66,19 +49,14 @@ const View = (props) => {
           />
         </Hero.Meta>
         <Hero.Meta {...data}>
-          <Metadata {...data} />
+          <HeroMetadata {...data} />
         </Hero.Meta>
-        {copyright ? (
-          <Copyright copyrightPosition={copyrightPosition}>
-            <Copyright.Prefix>{copyrightPrefix}</Copyright.Prefix>
-            <Copyright.Icon>
-              <Icon className={copyrightIcon} />
-            </Copyright.Icon>
-            <Copyright.Text>{copyright}</Copyright.Text>
-          </Copyright>
-        ) : (
-          ''
-        )}
+        <HeroCopyright
+          copyright={copyright}
+          copyrightIcon={copyrightIcon}
+          copyrightPosition={copyrightPosition}
+          copyrightPrefix={copyrightPrefix}
+        />
       </Hero>
     </React.Fragment>
   );
