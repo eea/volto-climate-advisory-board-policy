@@ -1,6 +1,6 @@
 import React from 'react';
 import { BodyClass } from '@plone/volto/helpers';
-import HeroEdit from '@eeacms/volto-hero-block/components/Blocks/Hero/Edit';
+import HeroEdit from './HeroEdit';
 
 const Edit = (props) => {
   return (

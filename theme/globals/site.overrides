@@ -268,7 +268,9 @@ svg.tertiary > g {
 }
 
 .hero-block-meta.text-left {
-  padding-bottom: 20px;
+  .field.date {
+    color: #fff;
+  }
 }
 
 .text-left a.ui.button.default {
