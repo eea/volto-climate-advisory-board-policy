@@ -1,4 +1,4 @@
-export default () => {
+const schema = () => {
   return {
     title: 'Hero',
     fieldsets: [
@@ -94,3 +94,5 @@ export default () => {
     required: [],
   };
 };
+
+export default schema;
