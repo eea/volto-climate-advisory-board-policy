@@ -9,7 +9,15 @@
 
 @topSectionBackground: #f0f4f5;
 
-@burgerActionBackgroundColor: #38445E;
-@megaMenuBackgroundColor: #38445E;
+@burgerActionBackgroundColor: #38445e;
+@megaMenuBackgroundColor: #38445e;
 
 @megaMenuSubTitleCountriesNestedGridMarginTop: -1rem;
+
+// Theme Sites
+@mobileThemeSitesMenuWidth: 168px;
+@tabletThemeSitesMenuWidth: 168px;
+@computerThemeSitesMenuWidth: 225px;
+@themeSitesMenuSiteLinkColor: @blue-grey-6;
+@themeSitesMenuSiteLinkFontWeight: @normal;
+@mobileThemeSitesMenuLeft: 0px;
