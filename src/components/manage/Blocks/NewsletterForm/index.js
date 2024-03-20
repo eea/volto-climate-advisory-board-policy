@@ -1,7 +1,7 @@
 import newsLetterForm from './NewsletterForm';
 import newsSVG from '@plone/volto/icons/news.svg';
 
-export default (config) => {
+const config = (config) => {
   config.blocks.blocksConfig.newsletter_form = {
     id: 'newsletter_form',
     title: 'Newsletters Form',
@@ -15,3 +15,5 @@ export default (config) => {
 
   return config;
 };
+
+export default config;

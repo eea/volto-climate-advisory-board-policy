@@ -1,7 +1,7 @@
 import TitleEdit from './Edit';
 import TitleView from './View';
 
-export default (config) => {
+const config = (config) => {
   if (config.blocks.blocksConfig.title) {
     config.blocks.blocksConfig.title = {
       ...config.blocks.blocksConfig.title,
@@ -12,3 +12,5 @@ export default (config) => {
 
   return config;
 };
+
+export default config;
