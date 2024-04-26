@@ -236,7 +236,7 @@ svg.tertiary > g {
 }
 
 .ui.fluid.cards .ui.fluid.card div.content {
-  padding: 1em;
+  padding: 1.5em;
   margin-bottom: 1.5em;
 }
 
