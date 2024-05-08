@@ -35,7 +35,9 @@ describe('Blocks Tests', () => {
     // Add block
     cy.get('.ui.basic.icon.button.block-add-button').first().click();
     cy.get('.blocks-chooser .title').contains('Common').click();
-    cy.get('.content.active.common .button.hero').contains('Hero').click({ force: true });
+    cy.get('.content.active.common .button.hero')
+      .contains('Hero')
+      .click({ force: true });
 
     // Configure block
     cy.getSlate().click().type('Hero Block');

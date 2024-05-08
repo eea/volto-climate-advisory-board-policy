@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-climate-advisory-board-policy",
-  "version": "0.1.45",
+  "version": "0.1.46",
   "description": "@eeacms/volto-climate-advisory-board-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency",
@@ -31,6 +31,7 @@
     "url": "git@github.com:eea/volto-climate-advisory-board-policy.git"
   },
   "devDependencies": {
+    "cypress": "13.1.0",
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
