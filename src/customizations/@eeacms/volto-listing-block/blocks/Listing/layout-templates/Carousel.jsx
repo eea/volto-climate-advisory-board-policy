@@ -63,8 +63,13 @@ const NextArrow = (props) => {
 const CardsCarousel = ({ block, items, ...rest }) => {
   const slider = React.useRef(null);
   const dots_parent = React.useRef(null);
+
   const slidesToShow = getSlidesToShow(items, rest.slidesToShow || 4);
   const itemsLength = items.length;
+  const maxDots = 5;
+
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
   const settings = {
     dots: itemsLength > 1,
     infinite: true,
@@ -80,26 +85,30 @@ const CardsCarousel = ({ block, items, ...rest }) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     customPaging: (i) => (
-      <button className={'slider-dots-button'} aria-current={i === 0}>
+      <button
+        className={'slider-dots-button'}
+        aria-current={(i + currentSlide) % maxDots === 0 ? 'true' : 'false'}
+      >
         <span className="slick-dot-icon" aria-hidden="true" />
         <span className="slick-sr-only">Go to slide {i + 1}</span>
       </button>
     ),
     appendDots: (dots) => (
       <ul ref={dots_parent} className={'slick-dots'}>
-        {window.innerWidth <= mobileLargeBreakpoint ? dots.slice(0, 5) : dots}
+        {window.innerWidth <= mobileLargeBreakpoint
+          ? dots.slice(0, maxDots).map((dot, i) => (
+              <li
+                key={i}
+                className={i === currentSlide % maxDots ? 'slick-active' : ''}
+              >
+                {dot}
+              </li>
+            ))
+          : dots}
       </ul>
     ),
-    afterChange: () => {
-      const dots = dots_parent.current;
-      if (dots) {
-        dots.querySelectorAll('.slider-dots-button').forEach(function (el) {
-          el.setAttribute(
-            'aria-current',
-            el.parentElement.className === 'slick-active',
-          );
-        });
-      }
+    beforeChange: (oldIndex, newIndex) => {
+      setCurrentSlide(newIndex);
     },
     responsive: [
       {
