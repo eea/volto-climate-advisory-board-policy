@@ -21,10 +21,10 @@
   ],
   "dependencies": {
     "@eeacms/volto-eea-design-system": "*",
-    "@eeacms/volto-eea-website-theme": "*",
-    "@eeacms/volto-hero-block": "*",
-    "@eeacms/volto-listing-block": "*",
-    "@eeacms/volto-spotlight": "*"
+    "@eeacms/volto-eea-website-theme": "^1.33.2",
+    "@eeacms/volto-hero-block": "^6.0.1",
+    "@eeacms/volto-listing-block": "^7.1.0",
+    "@eeacms/volto-spotlight": "^2.0.10"
   },
   "repository": {
     "type": "git",
