@@ -41,7 +41,7 @@ const ContentMetadataTags = (props) => {
     contentImageInfo.contentHasImage = image?.scales?.large?.download || false;
 
     if (contentImageInfo.contentHasImage && opengraph_image?.scales?.large) {
-      contentImageInfo.url = toPublicURL(opengraph_image.scales.large.download);
+      contentImageInfo.url = opengraph_image.scales.large.download;
       contentImageInfo.height = opengraph_image.scales.large.height;
       contentImageInfo.width = opengraph_image.scales.large.width;
       contentImageInfo.alt = opengraph_image.alt || title || 'Image';
@@ -76,19 +76,22 @@ const ContentMetadataTags = (props) => {
       />
       {seo_noindex && <meta name="robots" content="noindex" />}
       {contentImageInfo.contentHasImage && (
-        <meta property="og:image" content={contentImageInfo.url} />
+        <meta property="og:image" content={toPublicURL(contentImageInfo.url)} />
       )}
       {contentImageInfo.contentHasImage && (
         <meta property="og:image:alt" content={contentImageInfo.alt} />
+      )}
+      {contentImageInfo.contentHasImage && (
+        <meta
+          property="twitter:image"
+          content={toPublicURL(contentImageInfo.url)}
+        />
       )}
       {contentImageInfo.contentHasImage && (
         <meta property="og:image:width" content={contentImageInfo.width} />
       )}
       {contentImageInfo.contentHasImage && (
         <meta property="og:image:height" content={contentImageInfo.height} />
-      )}
-      {contentImageInfo.contentHasImage && (
-        <meta name="twitter:image" content={contentImageInfo.url} />
       )}
       {contentImageInfo.contentHasImage && (
         <meta name="twitter:image:alt" content={contentImageInfo.alt} />
