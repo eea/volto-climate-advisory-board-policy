@@ -150,6 +150,12 @@ svg.tertiary > g {
   padding: 0 !important;
 }
 
+.section-advisory-board-members {
+  .image-block-container {
+    padding-right: 1rem;
+  }
+}
+
 .column-blocks-wrapper .block {
   margin-bottom: 0 !important;
 }
