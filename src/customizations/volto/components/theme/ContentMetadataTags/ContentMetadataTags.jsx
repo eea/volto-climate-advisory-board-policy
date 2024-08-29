@@ -88,6 +88,12 @@ const ContentMetadataTags = (props) => {
         />
       )}
       {contentImageInfo.contentHasImage && (
+        <meta
+          name="twitter:image"
+          content={toPublicURL(contentImageInfo.url)}
+        />
+      )}
+      {contentImageInfo.contentHasImage && (
         <meta property="og:image:width" content={contentImageInfo.width} />
       )}
       {contentImageInfo.contentHasImage && (
