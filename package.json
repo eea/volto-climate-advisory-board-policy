@@ -21,25 +21,25 @@
   ],
   "dependencies": {
     "@eeacms/volto-eea-design-system": "^1.31.1",
-    "@eeacms/volto-eea-website-theme": "^1.33.2",
-    "@eeacms/volto-hero-block": "^6.0.1",
-    "@eeacms/volto-listing-block": "^7.1.0",
-    "@eeacms/volto-spotlight": "^2.0.10"
+    "@eeacms/volto-eea-website-theme": "*",
+    "@eeacms/volto-hero-block": "*",
+    "@eeacms/volto-listing-block": "*",
+    "@eeacms/volto-spotlight": "*"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:eea/volto-climate-advisory-board-policy.git"
   },
   "devDependencies": {
-    "cypress": "13.1.0",
     "@cypress/code-coverage": "^3.10.0",
     "@plone/scripts": "*",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "13.1.0",
     "cypress-fail-fast": "^5.0.1",
-    "md5": "^2.3.0",
+    "dotenv": "^16.3.2",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "dotenv": "^16.3.2"
+    "md5": "^2.3.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
