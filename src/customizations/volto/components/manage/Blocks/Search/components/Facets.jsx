@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { resolveExtension } from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import config from '@plone/volto/registry';
 import {
@@ -34,6 +34,13 @@ const Facets = (props) => {
     ...(data?.query?.query?.map(({ i, v }) => ({ [i]: v })) || []),
   );
 
+  // Clear all facets on component mount
+  useEffect(() => {
+    if (Object.keys(facets).length > 0) {
+      setFacets({});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       {data?.facets
@@ -86,7 +93,9 @@ const Facets = (props) => {
             facetSettings,
           );
 
-          let value = stateToValue({ facetSettings, index, selectedValue });
+          // Ensure the value is empty by default
+          let value =
+            stateToValue({ facetSettings, index, selectedValue }) || [];
 
           const { rewriteOptions = (name, options) => options } =
             search.extensions.facetWidgets;

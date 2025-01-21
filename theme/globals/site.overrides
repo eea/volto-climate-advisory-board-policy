@@ -150,6 +150,12 @@ svg.tertiary > g {
   padding: 0 !important;
 }
 
+.section-advisory-board-members {
+  .image-block-container {
+    padding-right: 1rem;
+  }
+}
+
 .column-blocks-wrapper .block {
   margin-bottom: 0 !important;
 }
@@ -236,7 +242,8 @@ svg.tertiary > g {
 }
 
 .ui.fluid.cards .ui.fluid.card div.content {
-  padding: 1em;
+  padding-top: 0.75em !important;
+  padding-left: 0.2em !important;
   margin-bottom: 1.5em;
 }
 
@@ -247,7 +254,7 @@ svg.tertiary > g {
 
 .ui.fluid.cards .ui.fluid.card div.content div.meta {
   position: absolute;
-  bottom: 1em;
+  bottom: 0.25em;
   width: 50%;
   padding-top: 1em;
   color: #a3a3a3;
