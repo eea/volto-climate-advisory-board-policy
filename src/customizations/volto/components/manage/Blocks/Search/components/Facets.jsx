@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+
+import { Button, Grid } from 'semantic-ui-react';
+
 import { resolveExtension } from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import config from '@plone/volto/registry';
 import {
@@ -6,8 +9,16 @@ import {
   hasDateOperation,
 } from '@plone/volto/components/manage/Blocks/Search/utils';
 import { filtered } from '@eeacms/volto-climate-advisory-board-policy/utils';
+import { defineMessages, useIntl } from 'react-intl';
 
-const showFacet = (index) => {
+const messages = defineMessages({
+  moreFilters: { id: 'More filters', defaultMessage: 'More filters' },
+  lessFilters: { id: 'Less filters', defaultMessage: 'Less filters' },
+  showFilters: { id: 'Show filters', defaultMessage: 'Show filters' },
+  hideFilters: { id: 'Hide filters', defaultMessage: 'Hide filters' },
+});
+
+const defaultShowFacet = (index) => {
   const { values } = index;
   return index
     ? hasNonValueOperation(index.operations || []) ||
@@ -18,6 +29,7 @@ const showFacet = (index) => {
 };
 
 const Facets = (props) => {
+  const [hidden, setHidden] = useState(true);
   const {
     querystring,
     data = {},
@@ -28,12 +40,29 @@ const Facets = (props) => {
   } = props;
   const { search } = config.blocks.blocksConfig;
 
+  const advancedFilters = useMemo(() => {
+    let count = 0;
+    for (let facetSettings of data.facets || []) {
+      if (facetSettings.advanced) {
+        count++;
+      }
+    }
+
+    if (count === data.facets?.length) {
+      return 2;
+    }
+    if (count) {
+      return 1;
+    }
+    return 0;
+  }, [data.facets]);
+
   const FacetWrapper = facetWrapper;
   const query_to_values = Object.assign(
     {},
     ...(data?.query?.query?.map(({ i, v }) => ({ [i]: v })) || []),
   );
-
+  const intl = useIntl();
   // Clear all facets on component mount
   useEffect(() => {
     if (Object.keys(facets).length > 0) {
@@ -47,6 +76,7 @@ const Facets = (props) => {
         ?.filter((facetSettings) => !facetSettings.hidden)
         .map((facetSettings) => {
           const field = facetSettings?.field?.value;
+          const isAdvanced = facetSettings?.advanced;
           const index = querystring.indexes[field] || {};
           const { values = {} } = index;
 
@@ -62,7 +92,6 @@ const Facets = (props) => {
                 ? query_to_values[field].includes(value)
                 : true,
             );
-
           switch (field) {
             case 'temporal_coverage':
               choices = choices.sort((a, b) => b.label - a.label);
@@ -82,12 +111,21 @@ const Facets = (props) => {
               );
           }
 
+          choices = choices.sort((a, b) =>
+            a.label.localeCompare(b.label, 'en', { sensitivity: 'base' }),
+          );
+
           const isMulti = facetSettings.multiple;
           const selectedValue = facets[facetSettings?.field?.value];
+          const visible = (isAdvanced && !hidden) || !isAdvanced;
 
           // TODO :handle changing the type of facet (multi/nonmulti)
 
-          const { view: FacetWidget, stateToValue } = resolveExtension(
+          const {
+            view: FacetWidget,
+            stateToValue,
+            showFacet = defaultShowFacet,
+          } = resolveExtension(
             'type',
             search.extensions.facetWidgets.types,
             facetSettings,
@@ -101,7 +139,11 @@ const Facets = (props) => {
             search.extensions.facetWidgets;
 
           return FacetWrapper && (isEditMode || showFacet(index)) ? (
-            <FacetWrapper key={facetSettings['@id']}>
+            <FacetWrapper
+              key={facetSettings['@id']}
+              facetSettings={facetSettings}
+              visible={visible}
+            >
               <FacetWidget
                 facet={facetSettings}
                 choices={rewriteOptions(facetSettings?.field?.value, choices)}
@@ -117,6 +159,28 @@ const Facets = (props) => {
             ''
           );
         })}
+      {advancedFilters > 0 && (
+        <Grid.Column
+          mobile={12}
+          tablet={12}
+          computer={12}
+          className="toggle-advanced-facets"
+        >
+          <Button
+            onClick={() => {
+              setHidden((prevHidden) => !prevHidden);
+            }}
+          >
+            {hidden
+              ? advancedFilters === 2
+                ? intl.formatMessage(messages.showFilters)
+                : intl.formatMessage(messages.moreFilters)
+              : advancedFilters === 2
+              ? intl.formatMessage(messages.hideFilters)
+              : intl.formatMessage(messages.lessFilters)}
+          </Button>
+        </Grid.Column>
+      )}
     </>
   );
 };
