@@ -76,9 +76,8 @@ const FirstLevelContent = ({ element, renderMenuItem, ...props }) => {
         <React.Fragment>
           {element.items.map((item, index) => {
             let firstLevelPanels = [];
-            const noChildrenNavigation = config.settings.ab.noChildrenNavigation.includes(
-              item['url'],
-            );
+            const noChildrenNavigation =
+              config.settings.ab.noChildrenNavigation.includes(item['url']);
             if (!item.items.length || noChildrenNavigation) {
               return (
                 <React.Fragment key={index}>
@@ -198,9 +197,8 @@ const NestedAccordion = ({ menuItems, renderMenuItem, ...props }) => {
     .forEach((element, index) => {
       let x = {};
       x.key = index;
-      const noChildrenNavigation = config.settings.ab.noChildrenNavigation.includes(
-        element.url,
-      );
+      const noChildrenNavigation =
+        config.settings.ab.noChildrenNavigation.includes(element.url);
 
       if (pathName.indexOf(element.url) !== -1) {
         defaultIndex = index;
