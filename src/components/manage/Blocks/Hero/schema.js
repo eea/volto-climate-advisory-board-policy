@@ -1,4 +1,4 @@
-export default {
+const schema = {
   title: 'Hero',
   fieldsets: [
     {
@@ -92,3 +92,5 @@ export default {
   },
   required: [],
 };
+
+export default schema;

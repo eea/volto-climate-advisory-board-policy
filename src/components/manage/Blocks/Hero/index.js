@@ -2,7 +2,7 @@ import HeroEdit from './Edit';
 import HeroView from './View';
 import schema from './schema';
 
-export default (config) => {
+const config = (config) => {
   if (config.blocks.blocksConfig.hero) {
     config.blocks.blocksConfig.hero = {
       ...config.blocks.blocksConfig.hero,
@@ -14,3 +14,5 @@ export default (config) => {
 
   return config;
 };
+
+export default config;
