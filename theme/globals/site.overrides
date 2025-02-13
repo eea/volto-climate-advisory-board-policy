@@ -94,8 +94,7 @@ svg.tertiary {
   background-color: @contentBoxTertiaryBackground !important;
   color: @contentBoxTertiaryColor !important;
 }
-
-svg.tertiary > g {
+z svg.tertiary > g {
   fill: #000 !important;
 }
 
@@ -383,4 +382,23 @@ svg.tertiary > g {
     display: flex;
     justify-content: center;
   }
+}
+
+body:not(.section-edit):not(.section-add) .content-box::before {
+  width: 100vw !important;
+  margin-left: -52vw !important;
+  z-index: -1 !important;
+}
+
+.has--size--half_width_left.newsletterBlock::before {
+  position: absolute !important;
+  width: 100vw !important;
+  margin-left: -52vw !important;
+  margin-right: 52vw !important;
+  z-index: -1 !important;
+  display: inline !important;
+}
+
+.siteroot .ui.fluid.cards .ui.fluid.card div.content {
+  padding-left: 1rem !important;
 }
