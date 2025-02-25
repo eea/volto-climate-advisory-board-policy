@@ -9,7 +9,7 @@ const HeroMetadata = ({ buttonLabel, buttonLink, inverted, styles = {} }) => {
 
   return buttonLabel ? (
     <UniversalLink
-      className={cx('ui button', buttonVariant, { inverted })}
+      className={cx('ui default button', buttonVariant, { inverted })}
       href={buttonLink || ''}
     >
       {buttonLabel}
