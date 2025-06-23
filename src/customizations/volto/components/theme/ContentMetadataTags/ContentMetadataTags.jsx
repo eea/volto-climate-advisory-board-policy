@@ -1,5 +1,6 @@
-import { toPublicURL, Helmet } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
+import { toPublicURL, Helmet } from "@plone/volto/helpers";
+import config from "@plone/volto/registry";
+import { getImageScaleParams } from "@eeacms/volto-object-widget/helpers";
 
 const ContentMetadataTags = (props) => {
   const {
@@ -31,25 +32,27 @@ const ContentMetadataTags = (props) => {
       image = image_field;
     }
 
+    const imageInfo = getImageScaleParams(image, "large");
+    const ogImageInfo = getImageScaleParams(opengraph_image, "large");
+
     const contentImageInfo = {
-      contentHasImage: false,
+      contentHasImage: !!imageInfo?.download,
       url: null,
       height: null,
       width: null,
       alt: null,
     };
-    contentImageInfo.contentHasImage = image?.scales?.large?.download || false;
 
-    if (contentImageInfo.contentHasImage && opengraph_image?.scales?.large) {
-      contentImageInfo.url = opengraph_image.scales.large.download;
-      contentImageInfo.height = opengraph_image.scales.large.height;
-      contentImageInfo.width = opengraph_image.scales.large.width;
-      contentImageInfo.alt = opengraph_image.alt || title || 'Image';
+    if (contentImageInfo.contentHasImage && ogImageInfo) {
+      contentImageInfo.url = ogImageInfo.download;
+      contentImageInfo.height = ogImageInfo.height;
+      contentImageInfo.width = ogImageInfo.width;
+      contentImageInfo.alt = opengraph_image?.alt || title || "Image";
     } else if (contentImageInfo.contentHasImage) {
-      contentImageInfo.url = toPublicURL(image.scales.large.download);
-      contentImageInfo.height = image.scales.large.height;
-      contentImageInfo.width = image.scales.large.width;
-      contentImageInfo.alt = image.alt || title || 'Image';
+      contentImageInfo.url = toPublicURL(imageInfo.download);
+      contentImageInfo.height = imageInfo.height;
+      contentImageInfo.width = imageInfo.width;
+      contentImageInfo.alt = image?.alt || title || "Image";
     }
 
     return contentImageInfo;
@@ -59,10 +62,10 @@ const ContentMetadataTags = (props) => {
 
   return (
     <Helmet>
-      <title>{(seo_title || title)?.replace(/\u00AD/g, '')}</title>
+      <title>{(seo_title || title)?.replace(/\u00AD/g, "")}</title>
       <link
         rel="canonical"
-        href={seo_canonical_url || toPublicURL(props.content['@id'])}
+        href={seo_canonical_url || toPublicURL(props.content["@id"])}
       />
       <meta name="description" content={seo_description || description} />
       <meta
@@ -72,7 +75,7 @@ const ContentMetadataTags = (props) => {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content={seo_canonical_url || toPublicURL(props.content['@id'])}
+        content={seo_canonical_url || toPublicURL(props.content["@id"])}
       />
       {seo_noindex && <meta name="robots" content="noindex" />}
       {contentImageInfo.contentHasImage && (
@@ -111,7 +114,7 @@ const ContentMetadataTags = (props) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:url"
-        content={seo_canonical_url || toPublicURL(props.content['@id'])}
+        content={seo_canonical_url || toPublicURL(props.content["@id"])}
       />
       {/* TODO: Improve SEO backend metadata providers by adding the twitter handler */}
       {/* <meta property="twitter:site" content={'@my_twitter_handler'} /> */}
