@@ -1,29 +1,29 @@
-import React, { useCallback, useMemo } from "react";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import isFunction from "lodash/isFunction";
-import config from "@plone/volto/registry";
-import { BlockDataForm, SidebarPortal } from "@plone/volto/components";
-import { BodyClass } from "@plone/volto/helpers";
-import SlateEditor from "@plone/volto-slate/editor/SlateEditor";
-import { handleKey } from "@plone/volto-slate/blocks/Text/keyboard";
+import React, { useCallback, useMemo } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import isFunction from 'lodash/isFunction';
+import config from '@plone/volto/registry';
+import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
+import { BodyClass } from '@plone/volto/helpers';
+import SlateEditor from '@plone/volto-slate/editor/SlateEditor';
+import { handleKey } from '@plone/volto-slate/blocks/Text/keyboard';
 import {
   uploadContent,
   saveSlateBlockSelection,
-} from "@plone/volto-slate/actions";
+} from '@plone/volto-slate/actions';
 
-import { defineMessages, injectIntl } from "react-intl";
-import { createSlateHeader } from "@eeacms/volto-hero-block/helpers";
-import Hero from "@eeacms/volto-hero-block/components/Blocks/Hero/Hero";
-import Banner from "@eeacms/volto-eea-design-system/ui/Banner/Banner";
-import { getImageScaleParams } from "@eeacms/volto-object-widget/helpers";
-import HeroMetadata from "./HeroMetadata";
-import HeroCopyright from "./HeroCopyright";
+import { defineMessages, injectIntl } from 'react-intl';
+import { createSlateHeader } from '@eeacms/volto-hero-block/helpers';
+import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
+import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
+import HeroMetadata from './HeroMetadata';
+import HeroCopyright from './HeroCopyright';
 
 const messages = defineMessages({
   published: {
-    id: "Published",
-    defaultMessage: "Published",
+    id: 'Published',
+    defaultMessage: 'Published',
   },
 });
 
@@ -42,8 +42,8 @@ const Edit = (props) => {
   const metadata = props.metadata || props.properties;
   const { hidePublishingDate } = props.data;
   const { text, copyright, copyrightIcon, copyrightPosition } = data;
-  const copyrightPrefix = config.blocks.blocksConfig.hero.copyrightPrefix || "";
-  const heroImage = getImageScaleParams(data.image, "large");
+  const copyrightPrefix = config.blocks.blocksConfig.hero.copyrightPrefix || '';
+  const heroImage = getImageScaleParams(data.image, 'large');
   const schema = React.useMemo(() => {
     const blockSchema = config.blocks.blocksConfig.hero.schema;
     if (isFunction(blockSchema)) {
@@ -61,7 +61,7 @@ const Edit = (props) => {
   );
 
   const publishingDate = useMemo(
-    () => getDate(hidePublishingDate, "effective"),
+    () => getDate(hidePublishingDate, 'effective'),
     [getDate, hidePublishingDate],
   );
 
@@ -82,7 +82,12 @@ const Edit = (props) => {
   return (
     <>
       <BodyClass className="with-hero-block" />
-      <Hero {...data} image={heroImage?.download} height={heroImage?.height}>
+      <Hero
+        {...data}
+        image={data.image}
+        image_url={heroImage?.download}
+        height={heroImage?.height}
+      >
         <Hero.Text {...data}>
           <SlateEditor
             index={index}
