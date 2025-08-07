@@ -402,3 +402,24 @@ body:not(.section-edit):not(.section-add) .content-box::before {
 .siteroot .ui.fluid.cards .ui.fluid.card div.content {
   padding-left: 1rem !important;
 }
+
+#inpage-navigation {
+  .mobile.tablet.only {
+    display: none !important;
+
+    @media @mobile, @tablet {
+      display: block !important;
+    }
+  }
+
+  .tablet.or.lower.hidden {
+    display: block !important;
+    .text {
+      display: none !important;
+    }
+
+    @media @mobile, @tablet {
+      display: none !important;
+    }
+  }
+}
