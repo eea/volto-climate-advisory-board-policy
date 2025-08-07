@@ -21,12 +21,12 @@
     "@eeacms/volto-object-widget"
   ],
   "dependencies": {
-    "@eeacms/volto-eea-design-system": "^1.31.1",
+    "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-hero-block": "*",
     "@eeacms/volto-listing-block": "*",
-    "@eeacms/volto-spotlight": "*",
-    "@eeacms/volto-object-widget": "*"
+    "@eeacms/volto-object-widget": "*",
+    "@eeacms/volto-spotlight": "*"
   },
   "repository": {
     "type": "git",
