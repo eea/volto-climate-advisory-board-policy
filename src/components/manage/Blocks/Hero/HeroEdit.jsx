@@ -16,6 +16,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { createSlateHeader } from '@eeacms/volto-hero-block/helpers';
 import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 import HeroMetadata from './HeroMetadata';
 import HeroCopyright from './HeroCopyright';
 
@@ -42,6 +43,7 @@ const Edit = (props) => {
   const { hidePublishingDate } = props.data;
   const { text, copyright, copyrightIcon, copyrightPosition } = data;
   const copyrightPrefix = config.blocks.blocksConfig.hero.copyrightPrefix || '';
+  const heroImage = getImageScaleParams(data.image, 'large');
   const schema = React.useMemo(() => {
     const blockSchema = config.blocks.blocksConfig.hero.schema;
     if (isFunction(blockSchema)) {
@@ -80,7 +82,12 @@ const Edit = (props) => {
   return (
     <>
       <BodyClass className="with-hero-block" />
-      <Hero {...data}>
+      <Hero
+        {...data}
+        image={data.image}
+        image_url={heroImage?.download}
+        height={heroImage?.height}
+      >
         <Hero.Text {...data}>
           <SlateEditor
             index={index}

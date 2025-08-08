@@ -5,6 +5,7 @@ import { BodyClass } from '@plone/volto/helpers';
 import { serializeText } from '@eeacms/volto-hero-block/helpers';
 import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
+import { getImageScaleParams } from '@eeacms/volto-object-widget/helpers';
 import config from '@plone/volto/registry';
 import HeroMetadata from './HeroMetadata';
 import HeroCopyright from './HeroCopyright';
@@ -22,6 +23,7 @@ const View = (props) => {
   const copyrightPrefix = config.blocks.blocksConfig.hero.copyrightPrefix || '';
   const metadata = props.metadata || props.properties;
   const { hidePublishingDate } = props.data;
+  const heroImage = getImageScaleParams(data.image, 'large');
 
   // Set dates
   const getDate = useCallback(
@@ -39,7 +41,12 @@ const View = (props) => {
   return (
     <React.Fragment>
       <BodyClass className="with-hero-block" />
-      <Hero {...data}>
+      <Hero
+        {...data}
+        image={data.image}
+        image_url={heroImage?.download}
+        height={heroImage?.height}
+      >
         <Hero.Text {...data}>{serializeText(text)}</Hero.Text>
         <Hero.Meta>
           <Banner.MetadataField

@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-climate-advisory-board-policy",
-  "version": "0.1.52",
+  "version": "1.0.0",
   "description": "@eeacms/volto-climate-advisory-board-policy: Volto add-on",
   "main": "src/index.js",
   "author": "European Environment Agency",
@@ -17,13 +17,15 @@
     "@eeacms/volto-listing-block",
     "@eeacms/volto-eea-design-system",
     "@eeacms/volto-eea-website-theme",
-    "@eeacms/volto-spotlight"
+    "@eeacms/volto-spotlight",
+    "@eeacms/volto-object-widget"
   ],
   "dependencies": {
-    "@eeacms/volto-eea-design-system": "^1.31.1",
+    "@eeacms/volto-eea-design-system": "*",
     "@eeacms/volto-eea-website-theme": "*",
     "@eeacms/volto-hero-block": "*",
     "@eeacms/volto-listing-block": "*",
+    "@eeacms/volto-object-widget": "*",
     "@eeacms/volto-spotlight": "*"
   },
   "repository": {
