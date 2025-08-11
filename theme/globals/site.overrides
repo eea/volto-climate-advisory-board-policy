@@ -346,6 +346,10 @@ z svg.tertiary > g {
 }
 
 @media screen and (max-width: @tabletBreakpoint) {
+  // Hide desktop navigation on mobile
+  .main-menu .ui.text.menu {
+    display: none !important;
+  }
   .ui.four.cards {
     margin-right: 0 !important;
     margin-left: 0 !important;
