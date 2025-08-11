@@ -13,6 +13,8 @@
 @primaryColor: #658f99;
 @secondaryColor: @green-4;
 
+@containerWidth: 1240px;
+
 @lightPrimaryColor: @green-5;
 @lightSecondaryColor: @green-4;
 @orange: @orange-0;
@@ -52,7 +54,6 @@
   rgba(12, 27, 40, 0.7) 10%,
   rgba(0, 36, 78, 0) 100%
 );
-
 
 /*-------------------
      Breakpoints
