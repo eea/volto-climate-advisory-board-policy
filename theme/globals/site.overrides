@@ -427,3 +427,10 @@ body:not(.section-edit):not(.section-add) .content-box::before {
     }
   }
 }
+
+@media only screen and (max-width: @largestMobileScreen) {
+  // avoid overlap with web report mobile menu
+  #inpage-navigation {
+    right: 45px !important;
+  }
+}
