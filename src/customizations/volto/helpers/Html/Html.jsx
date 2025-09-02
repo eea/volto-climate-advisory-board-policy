@@ -3,14 +3,14 @@
  * @module helpers/Html
  */
 
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Helmet from "@plone/volto/helpers/Helmet/Helmet";
-import serialize from "serialize-javascript";
-import { join } from "lodash";
-import BodyClass from "@plone/volto/helpers/BodyClass/BodyClass";
-import { runtimeConfig } from "@plone/volto/runtime_config";
-import config from "@plone/volto/registry";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import serialize from 'serialize-javascript';
+import { join } from 'lodash';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import { runtimeConfig } from '@plone/volto/runtime_config';
+import config from '@plone/volto/registry';
 
 const CRITICAL_CSS_TEMPLATE = `function alter() {
   document.querySelectorAll("head link[rel='prefetch']").forEach(function(el) { el.rel = 'stylesheet'});
@@ -28,8 +28,8 @@ export const loadReducers = (state = {}) => {
     ...Object.keys(state).map((name) =>
       settings.initialReducersBlacklist.includes(name)
         ? {}
-        : { [name]: state[name] }
-    )
+        : { [name]: state[name] },
+    ),
   );
 };
 
@@ -91,7 +91,7 @@ class Html extends Component {
     const { extractor, markup, store, criticalCss, apiPath, publicURL, nonce } =
       this.props;
     const head = Helmet.rewind();
-    const bodyClass = join(BodyClass.rewind(), " ");
+    const bodyClass = join(BodyClass.rewind(), ' ');
     const htmlAttributes = head.htmlAttributes.toComponent();
 
     return (
@@ -104,7 +104,7 @@ class Html extends Component {
           {head.link.toComponent()}
           {head.script.toComponent()}
 
-          {React.createElement("script", {
+          {React.createElement('script', {
             nonce: nonce,
             dangerouslySetInnerHTML: {
               __html: `window.env = ${serialize(
@@ -119,7 +119,7 @@ class Html extends Component {
                     publicURL,
                   }),
                 },
-                { space: 2 }
+                { space: 2 },
               )};`,
             },
           })}
@@ -135,7 +135,7 @@ class Html extends Component {
           <meta name="generator" content="Plone 6 - https://plone.org" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          {process.env.NODE_ENV === "production" && criticalCss && (
+          {process.env.NODE_ENV === 'production' && criticalCss && (
             <style
               dangerouslySetInnerHTML={{ __html: this.props.criticalCss }}
             />
@@ -144,17 +144,17 @@ class Html extends Component {
           {extractor.getLinkElements().map((elem) =>
             React.cloneElement(elem, {
               crossOrigin:
-                process.env.NODE_ENV === "production" ? undefined : "true",
+                process.env.NODE_ENV === 'production' ? undefined : 'true',
               rel: !criticalCss
                 ? elem.props.rel
-                : elem.props.as === "style"
-                ? "prefetch"
+                : elem.props.as === 'style'
+                ? 'prefetch'
                 : elem.props.rel,
-            })
+            }),
           )}
           {/* Styles in development are loaded with Webpack's style-loader, in production,
               they need to be static*/}
-          {process.env.NODE_ENV === "production" ? (
+          {process.env.NODE_ENV === 'production' ? (
             criticalCss ? (
               <>
                 <script
@@ -165,11 +165,11 @@ class Html extends Component {
                 {extractor.getStyleElements().map((elem) => (
                   <noscript>
                     {React.cloneElement(elem, {
-                      rel: "stylesheet",
+                      rel: 'stylesheet',
                       crossOrigin:
-                        process.env.NODE_ENV === "production"
+                        process.env.NODE_ENV === 'production'
                           ? undefined
-                          : "true",
+                          : 'true',
                     })}
                   </noscript>
                 ))}
@@ -183,15 +183,15 @@ class Html extends Component {
           <div role="navigation" aria-label="Toolbar" id="toolbar" />
           <div id="main" dangerouslySetInnerHTML={{ __html: markup }} />
           <div role="complementary" aria-label="Sidebar" id="sidebar" />
-          {React.createElement("script", {
+          {React.createElement('script', {
             nonce: nonce,
             dangerouslySetInnerHTML: {
               __html: `window.__data=${serialize(
                 loadReducers(store.getState()),
-                { space: 2 }
+                { space: 2 },
               )};`,
             },
-            charSet: "UTF-8",
+            charSet: 'UTF-8',
           })}
           {/* Add the crossorigin while in development */}
           {this.props.extractScripts !== false
@@ -199,10 +199,10 @@ class Html extends Component {
                 React.cloneElement(elem, {
                   nonce: nonce,
                   crossOrigin:
-                    process.env.NODE_ENV === "production" ? undefined : "true",
-                })
+                    process.env.NODE_ENV === 'production' ? undefined : 'true',
+                }),
               )
-            : ""}
+            : ''}
         </body>
       </html>
     );

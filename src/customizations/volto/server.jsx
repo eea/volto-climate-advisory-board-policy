@@ -1,26 +1,26 @@
 /* eslint no-console: 0 */
-import "@plone/volto/config"; // This is the bootstrap for the global config - server side
-import { existsSync, lstatSync, readFileSync } from "fs";
-import React from "react";
-import { StaticRouter } from "react-router-dom";
-import { Provider } from "react-intl-redux";
-import express from "express";
-import { renderToString } from "react-dom/server";
-import { createMemoryHistory } from "history";
-import { parse as parseUrl } from "url";
-import { keys } from "lodash";
-import locale from "locale";
-import { detect } from "detect-browser";
-import path from "path";
-import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
-import { resetServerContext } from "react-beautiful-dnd";
-import { CookiesProvider } from "react-cookie";
-import cookiesMiddleware from "universal-cookie-express";
-import debug from "debug";
-import crypto from "crypto";
+import '@plone/volto/config'; // This is the bootstrap for the global config - server side
+import { existsSync, lstatSync, readFileSync } from 'fs';
+import React from 'react';
+import { StaticRouter } from 'react-router-dom';
+import { Provider } from 'react-intl-redux';
+import express from 'express';
+import { renderToString } from 'react-dom/server';
+import { createMemoryHistory } from 'history';
+import { parse as parseUrl } from 'url';
+import { keys } from 'lodash';
+import locale from 'locale';
+import { detect } from 'detect-browser';
+import path from 'path';
+import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
+import { resetServerContext } from 'react-beautiful-dnd';
+import { CookiesProvider } from 'react-cookie';
+import cookiesMiddleware from 'universal-cookie-express';
+import debug from 'debug';
+import crypto from 'crypto';
 
-import routes from "@plone/volto/routes";
-import config from "@plone/volto/registry";
+import routes from '@plone/volto/routes';
+import config from '@plone/volto/registry';
 
 import {
   flattenToAppURL,
@@ -30,20 +30,20 @@ import {
   toBackendLang,
   toGettextLang,
   toReactIntlLang,
-} from "@plone/volto/helpers";
-import { changeLanguage } from "@plone/volto/actions";
+} from '@plone/volto/helpers';
+import { changeLanguage } from '@plone/volto/actions';
 
-import userSession from "@plone/volto/reducers/userSession/userSession";
+import userSession from '@plone/volto/reducers/userSession/userSession';
 
-import ErrorPage from "@plone/volto/error";
+import ErrorPage from '@plone/volto/error';
 
-import languages from "@plone/volto/constants/Languages";
+import languages from '@plone/volto/constants/Languages';
 
-import configureStore from "@plone/volto/store";
+import configureStore from '@plone/volto/store';
 import {
   ReduxAsyncConnect,
   loadOnServer,
-} from "@plone/volto/helpers/AsyncConnect";
+} from '@plone/volto/helpers/AsyncConnect';
 
 let locales = {};
 const isCSP = process.env.CSP_HEADER || config.settings.serverConfig.csp;
@@ -51,31 +51,31 @@ const isCSP = process.env.CSP_HEADER || config.settings.serverConfig.csp;
 if (config.settings) {
   config.settings.supportedLanguages.forEach((lang) => {
     const langFileName = toGettextLang(lang);
-    import("@root/../locales/" + langFileName + ".json").then((locale) => {
+    import('@root/../locales/' + langFileName + '.json').then((locale) => {
       locales = { ...locales, [toReactIntlLang(lang)]: locale.default };
     });
   });
 }
 
 function reactIntlErrorHandler(error) {
-  debug("i18n")(error);
+  debug('i18n')(error);
 }
 
-const supported = new locale.Locales(keys(languages), "en");
+const supported = new locale.Locales(keys(languages), 'en');
 
 const server = express()
-  .disable("x-powered-by")
-  .set("etag", false)
-  .head("/*", function (req, res) {
+  .disable('x-powered-by')
+  .set('etag', false)
+  .head('/*', function (req, res) {
     // Support for HEAD requests. Required by start-test utility in CI.
-    res.send("");
+    res.send('');
   })
   .use(cookiesMiddleware());
 
 const middleware = (config.settings.expressMiddleware || []).filter((m) => m);
 
-server.all("*", setupServer);
-if (middleware.length) server.use("/", middleware);
+server.all('*', setupServer);
+if (middleware.length) server.use('/', middleware);
 
 server.use(function (err, req, res, next) {
   if (err) {
@@ -89,7 +89,7 @@ server.use(function (err, req, res, next) {
     );
 
     res.set({
-      "Cache-Control": "public, max-age=60, no-transform",
+      'Cache-Control': 'public, max-age=60, no-transform',
     });
 
     /* Displays error in console
@@ -106,24 +106,24 @@ server.use(function (err, req, res, next) {
 });
 
 function buildCSPHeader(opts, nonce) {
-  if (typeof opts === "string") {
+  if (typeof opts === 'string') {
     //CSP_HEADER
-    return opts.replaceAll("{nonce}", `'nonce-${nonce}'`);
+    return opts.replaceAll('{nonce}', `'nonce-${nonce}'`);
   }
   return Object.keys(opts)
     .sort()
     .reduce((acc, key) => {
       return [
         ...acc,
-        `${key} ${opts[key].replaceAll("{nonce}", `'nonce-${nonce}'`)}`,
+        `${key} ${opts[key].replaceAll('{nonce}', `'nonce-${nonce}'`)}`,
       ];
     }, [])
-    .join("; ");
+    .join('; ');
 }
 
 function setupServer(req, res, next) {
   if (isCSP) {
-    const nonce = crypto.randomBytes(16).toString("base64");
+    const nonce = crypto.randomBytes(16).toString('base64');
     res.locals.nonce = nonce;
   }
 
@@ -131,18 +131,18 @@ function setupServer(req, res, next) {
 
   const lang = toReactIntlLang(
     new locale.Locales(
-      req.universalCookies.get("I18N_LANGUAGE") ||
+      req.universalCookies.get('I18N_LANGUAGE') ||
         config.settings.defaultLanguage ||
-        req.headers["accept-language"]
+        req.headers['accept-language'],
     )
       .best(supported)
-      .toString()
+      .toString(),
   );
 
   // Minimum initial state for the fake Redux store instance
   const initialState = {
     intl: {
-      defaultLocale: "en",
+      defaultLocale: 'en',
       locale: lang,
       messages: locales[lang],
     },
@@ -166,7 +166,7 @@ function setupServer(req, res, next) {
     );
 
     res.set({
-      "Cache-Control": "public, max-age=60, no-transform",
+      'Cache-Control': 'public, max-age=60, no-transform',
     });
 
     /* Displays error in console
@@ -183,7 +183,7 @@ function setupServer(req, res, next) {
 
   if (!process.env.RAZZLE_API_PATH && req.headers.host) {
     res.locals.detectedHost = `${
-      req.headers["x-forwarded-proto"] || req.protocol
+      req.headers['x-forwarded-proto'] || req.protocol
     }://${req.headers.host}`;
     config.settings.apiPath = res.locals.detectedHost;
     config.settings.publicURL = res.locals.detectedHost;
@@ -199,33 +199,33 @@ function setupServer(req, res, next) {
   next();
 }
 
-server.get("/*", (req, res) => {
+server.get('/*', (req, res) => {
   const { errorHandler, nonce } = res.locals;
 
   if (isCSP) {
-    res.setHeader("Content-Security-Policy", buildCSPHeader(isCSP, nonce));
+    res.setHeader('Content-Security-Policy', buildCSPHeader(isCSP, nonce));
   }
 
   const api = new Api(req);
 
-  const browserdetect = detect(req.headers["user-agent"]);
+  const browserdetect = detect(req.headers['user-agent']);
 
   const lang = toReactIntlLang(
     new locale.Locales(
-      req.universalCookies.get("I18N_LANGUAGE") ||
+      req.universalCookies.get('I18N_LANGUAGE') ||
         config.settings.defaultLanguage ||
-        req.headers["accept-language"]
+        req.headers['accept-language'],
     )
       .best(supported)
-      .toString()
+      .toString(),
   );
 
-  const authToken = req.universalCookies.get("auth_token");
+  const authToken = req.universalCookies.get('auth_token');
   const initialState = {
     userSession: { ...userSession(), token: authToken },
     form: req.body,
     intl: {
-      defaultLocale: "en",
+      defaultLocale: 'en',
       locale: lang,
       messages: locales[lang],
     },
@@ -242,10 +242,10 @@ server.get("/*", (req, res) => {
   persistAuthToken(store, req);
 
   // @loadable/server extractor
-  const buildDir = process.env.BUILD_DIR || "build";
+  const buildDir = process.env.BUILD_DIR || 'build';
   const extractor = new ChunkExtractor({
-    statsFile: path.resolve(path.join(buildDir, "loadable-stats.json")),
-    entrypoints: ["client"],
+    statsFile: path.resolve(path.join(buildDir, 'loadable-stats.json')),
+    entrypoints: ['client'],
   });
 
   const url = req.originalUrl || req.url;
@@ -254,9 +254,9 @@ server.get("/*", (req, res) => {
   loadOnServer({ store, location, routes, api })
     .then(() => {
       const initialLang =
-        req.universalCookies.get("I18N_LANGUAGE") ||
+        req.universalCookies.get('I18N_LANGUAGE') ||
         config.settings.defaultLanguage ||
-        req.headers["accept-language"];
+        req.headers['accept-language'];
 
       // The content info is in the store at this point thanks to the asynconnect
       // features, then we can force the current language info into the store when
@@ -270,9 +270,9 @@ server.get("/*", (req, res) => {
         : store.getState().content.data?.language?.token ||
           config.settings.defaultLanguage;
 
-      if (toBackendLang(initialLang) !== contentLang && url !== "/") {
+      if (toBackendLang(initialLang) !== contentLang && url !== '/') {
         const newLang = toReactIntlLang(
-          new locale.Locales(contentLang).best(supported).toString()
+          new locale.Locales(contentLang).best(supported).toString(),
         );
         store.dispatch(changeLanguage(newLang, locales[newLang], req));
       }
@@ -288,7 +288,7 @@ server.get("/*", (req, res) => {
               </StaticRouter>
             </Provider>
           </CookiesProvider>
-        </ChunkExtractorManager>
+        </ChunkExtractorManager>,
       );
 
       const readCriticalCss =
@@ -299,7 +299,7 @@ server.get("/*", (req, res) => {
       const browserdetect = store.getState().browserdetect;
       if (config.settings.notSupportedBrowsers.includes(browserdetect?.name)) {
         res.set({
-          "Cache-Control": "private",
+          'Cache-Control': 'private',
         });
       }
 
@@ -307,7 +307,7 @@ server.get("/*", (req, res) => {
         res.redirect(flattenToAppURL(context.url));
       } else if (context.error_code) {
         res.set({
-          "Cache-Control": "no-cache",
+          'Cache-Control': 'no-cache',
         });
 
         res.status(context.error_code).send(
@@ -320,16 +320,16 @@ server.get("/*", (req, res) => {
                   store={store}
                   extractScripts={
                     config.settings.serverConfig.extractScripts?.errorPages ||
-                    process.env.NODE_ENV !== "production"
+                    process.env.NODE_ENV !== 'production'
                   }
                   criticalCss={readCriticalCss(req)}
                   apiPath={res.locals.detectedHost || config.settings.apiPath}
                   publicURL={
                     res.locals.detectedHost || config.settings.publicURL
                   }
-                />
+                />,
               )}
-            `
+            `,
         );
       } else {
         res.status(200).send(
@@ -345,9 +345,9 @@ server.get("/*", (req, res) => {
                   publicURL={
                     res.locals.detectedHost || config.settings.publicURL
                   }
-                />
+                />,
               )}
-            `
+            `,
         );
       }
     }, errorHandler)
@@ -363,7 +363,7 @@ export const defaultReadCriticalCss = () => {
   const f = lstatSync(criticalCssPath);
   if (!f.isFile()) return;
 
-  return readFileSync(criticalCssPath, { encoding: "utf-8" });
+  return readFileSync(criticalCssPath, { encoding: 'utf-8' });
 };
 
 // Exposed for the console bootstrap info messages
