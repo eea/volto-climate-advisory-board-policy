@@ -119,6 +119,14 @@ const applyConfig = (config) => {
     config.blocks.blocksConfig.contextNavigation.restricted = false;
   }
 
+  //CSP HEADERS
+  const devsource = __DEVELOPMENT__
+    ? ` http://localhost:${parseInt(process.env.PORT || '3000') + 1}`
+    : '';
+  config.settings.serverConfig.csp = {
+    'script-src': `'self' {nonce}${devsource}`,
+  };
+
   return [installBlocks].reduce((acc, apply) => apply(acc), config);
 };
 
