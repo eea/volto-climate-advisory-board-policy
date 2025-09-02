@@ -1,15 +1,15 @@
-import logo from "@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png";
-import logoWhite from "@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png";
-import energyLogoWhite from "@eeacms/volto-climate-advisory-board-policy/../theme/assets/svg/energy-logo-white.svg";
-import { Icon } from "@plone/volto/components";
-import contentBoxSVG from "./icons/content-box.svg";
-import paintSVG from "@plone/volto/icons/paint.svg";
-import DocumentNarrowView from "@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView";
-import { addStylingFieldsetSchemaEnhancer } from "@eeacms/volto-climate-advisory-board-policy/components/manage/Blocks/schema";
+import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
+import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
+import energyLogoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/svg/energy-logo-white.svg';
+import { Icon } from '@plone/volto/components';
+import contentBoxSVG from './icons/content-box.svg';
+import paintSVG from '@plone/volto/icons/paint.svg';
+import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';
+import { addStylingFieldsetSchemaEnhancer } from '@eeacms/volto-climate-advisory-board-policy/components/manage/Blocks/schema';
 
-import installBlocks from "./components/manage/Blocks";
+import installBlocks from './components/manage/Blocks';
 
-import eeaWhiteLogo from "../theme/assets/svg/eea-logo-white.svg";
+import eeaWhiteLogo from '../theme/assets/svg/eea-logo-white.svg';
 
 const applyConfig = (config) => {
   // Group
@@ -27,7 +27,7 @@ const applyConfig = (config) => {
 
   // Listing
   if (config.blocks.blocksConfig.listing) {
-    config.blocks.blocksConfig.listing.title = "Listing (Content)";
+    config.blocks.blocksConfig.listing.title = 'Listing (Content)';
     config.blocks.blocksConfig.listing.schemaEnhancer =
       addStylingFieldsetSchemaEnhancer;
   }
@@ -48,27 +48,27 @@ const applyConfig = (config) => {
     logoWhite,
     sites: [
       {
-        link: "https://www.eea.europa.eu/",
+        link: 'https://www.eea.europa.eu/',
         src: eeaWhiteLogo,
-        alt: "EEA",
+        alt: 'EEA',
       },
       {
-        alt: "Climate and energy in the EU",
-        link: "https://climate-energy.eea.europa.eu/",
+        alt: 'Climate and energy in the EU',
+        link: 'https://climate-energy.eea.europa.eu/',
         src: energyLogoWhite,
       },
     ],
   };
 
   config.settings.ab = {
-    noChildrenNavigation: ["/reports-and-publications", "/news", "/contact"],
+    noChildrenNavigation: ['/reports-and-publications', '/news', '/contact'],
   };
 
   config.settings.pluggableStyles = [
     ...(config.settings.pluggableStyles || []),
     {
-      id: "content-box-keys",
-      title: "keys",
+      id: 'content-box-keys',
+      title: 'keys',
       previewComponent: () => (
         <Icon name={contentBoxSVG} size="88px" className="keys" />
       ),
@@ -81,8 +81,8 @@ const applyConfig = (config) => {
       },
     },
     {
-      id: "content-box-blue",
-      title: "Blue",
+      id: 'content-box-blue',
+      title: 'Blue',
       previewComponent: () => (
         <Icon name={contentBoxSVG} size="88px" className="blue" />
       ),
@@ -98,8 +98,8 @@ const applyConfig = (config) => {
   config.settings.slate.styleMenu.blockStyles = [
     ...config.settings.slate.styleMenu.blockStyles,
     {
-      cssClass: "orange",
-      label: "Orange",
+      cssClass: 'orange',
+      label: 'Orange',
       icon: (props) => <Icon name={paintSVG} size="18px" />,
     },
   ];
@@ -111,7 +111,7 @@ const applyConfig = (config) => {
   };
   config.views.layoutViewsNamesMapping = {
     ...(config.views.layoutViewsNamesMapping || {}),
-    document_narrow_view: "Document Narrow View",
+    document_narrow_view: 'Document Narrow View',
   };
 
   config.settings.isMultilingual = false;
@@ -121,10 +121,10 @@ const applyConfig = (config) => {
 
   //CSP HEADERS
   const devsource = __DEVELOPMENT__
-    ? ` http://localhost:${parseInt(process.env.PORT || "3000") + 1}`
-    : "";
+    ? ` http://localhost:${parseInt(process.env.PORT || '3000') + 1}`
+    : '';
   config.settings.serverConfig.csp = {
-    "script-src": `'self' {nonce}${devsource}`,
+    'script-src': `'self' {nonce}${devsource}`,
   };
 
   return [installBlocks].reduce((acc, apply) => apply(acc), config);
