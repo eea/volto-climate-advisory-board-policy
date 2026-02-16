@@ -269,6 +269,28 @@ z svg.tertiary > g {
   }
 }
 
+@media screen and (max-width: @tabletBreakpoint) {
+  .eea.hero-block .hero-block-inner-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #page-header .eea.banner .gradient > .ui.container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .ui.vertical.attached.segment.breadcrumbs {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  footer#footer .footer-wrapper {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
 .hero-block-body .hero-block-text.color-fg-default div h2 {
   color: white;
 }
