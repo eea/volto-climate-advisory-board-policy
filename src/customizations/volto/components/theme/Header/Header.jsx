@@ -11,7 +11,8 @@ import { withRouter } from 'react-router-dom';
 import { UniversalLink, SearchWidget } from '@plone/volto/components';
 import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import { getNavigation } from '@plone/volto/actions';
-import { Header, Logo } from '@eeacms/volto-eea-design-system/ui';
+import Header from '@eeacms/volto-eea-design-system/ui/Header/Header';
+import Logo from '@eeacms/volto-eea-design-system/ui/Logo/Logo';
 import { usePrevious } from '@eeacms/volto-eea-design-system/helpers';
 import HeaderMenuPopUp from './HeaderMenuPopUp';
 
