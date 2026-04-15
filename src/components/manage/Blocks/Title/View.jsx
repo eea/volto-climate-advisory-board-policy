@@ -1,5 +1,5 @@
 import React from 'react';
-import { BodyClass } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import TitleView from '@eeacms/volto-eea-website-theme/components/manage/Blocks/Title/View';
 
 const View = (props) => {

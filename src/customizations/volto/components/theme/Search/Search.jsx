@@ -7,8 +7,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { UniversalLink, SearchWidget } from '@plone/volto/components';
-import { asyncConnect } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
+import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
 import { FormattedMessage } from 'react-intl';
 import { Portal } from 'react-portal';
 import { Container, Pagination, Button, Header } from 'semantic-ui-react';
@@ -16,9 +17,10 @@ import qs from 'query-string';
 import classNames from 'classnames';
 import { defineMessages, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
-import { Helmet } from '@plone/volto/helpers';
-import { searchContent } from '@plone/volto/actions';
-import { Toolbar, Icon } from '@plone/volto/components';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { searchContent } from '@plone/volto/actions/search/search';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';
 

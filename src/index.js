@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
 import logo from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Header/logo.png';
 import logoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/images/Footer/logo-white.png';
 import energyLogoWhite from '@eeacms/volto-climate-advisory-board-policy/../theme/assets/svg/energy-logo-white.svg';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import contentBoxSVG from './icons/content-box.svg';
 import paintSVG from '@plone/volto/icons/paint.svg';
 import DocumentNarrowView from '@eeacms/volto-climate-advisory-board-policy/components/theme/Document/DocumentNarrowView';

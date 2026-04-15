@@ -1,7 +1,7 @@
 import React from 'react';
 import { Portal } from 'react-portal';
 // import { Breadcrumbs } from '@plone/volto/components';
-import { BodyClass } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import HeroView from './HeroView';
 
 function IsomorphicPortal({ children, active }) {

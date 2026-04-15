@@ -3,16 +3,16 @@
 [![Releases](https://img.shields.io/github/v/release/eea/volto-climate-advisory-board-policy)](https://github.com/eea/volto-climate-advisory-board-policy/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-climate-advisory-board-policy%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-climate-advisory-board-policy/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-master)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-climate-advisory-board-policy%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-climate-advisory-board-policy/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy-develop)
+[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&branch=develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy&branch=develop)
+[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&branch=develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy&branch=develop)
+[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&branch=develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy&branch=develop)
+[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-climate-advisory-board-policy&branch=develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-climate-advisory-board-policy&branch=develop)
 
 
 [Volto](https://github.com/plone/volto) add-on

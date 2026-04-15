@@ -5,11 +5,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DefaultView } from '@plone/volto/components/';
-
-import { BodyClass } from '@plone/volto/helpers';
-
-import { hasBlocksData } from '@plone/volto/helpers';
+import DefaultView from '@plone/volto/components/theme/View/DefaultView';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 
 /**
  * Component to display the default view.
