@@ -7,14 +7,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { asyncConnect, flattenToAppURL } from '@plone/volto/helpers';
+import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from 'semantic-ui-react';
-import { Helmet, getBaseUrl } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { Link } from 'react-router-dom';
 import config from '@plone/volto/registry';
 
-import { getNavigation, listActions } from '@plone/volto/actions';
+import { getNavigation } from '@plone/volto/actions/navigation/navigation';
+import { listActions } from '@plone/volto/actions/actions/actions';
 
 const messages = defineMessages({
   Sitemap: {

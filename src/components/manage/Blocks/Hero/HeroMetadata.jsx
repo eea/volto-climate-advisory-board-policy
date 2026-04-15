@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const HeroMetadata = ({ buttonLabel, buttonLink, inverted, styles = {} }) => {
   const isStylesEmpty = Object.keys(styles).length === 0;

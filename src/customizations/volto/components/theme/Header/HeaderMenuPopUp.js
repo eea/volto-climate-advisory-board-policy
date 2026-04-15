@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { useHistory } from 'react-router';
 import { Transition } from 'semantic-ui-react';
 import { Container, Grid, List, Icon, Accordion } from 'semantic-ui-react';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import config from '@plone/volto/registry';
 
 import { useClickOutside } from '@eeacms/volto-eea-design-system/helpers';

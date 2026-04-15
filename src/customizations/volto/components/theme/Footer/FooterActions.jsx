@@ -32,16 +32,15 @@ const FooterActions = (props) => {
             <div className="copyright">
               {props.copyright &&
                 props.copyright.map((copyright, index) => (
-                  <>
+                  <React.Fragment key={index}>
                     <a
                       href={copyright.link}
-                      key={index}
                       // target={'_blank'}
                       rel={'noreferrer'}
                     >
                       {copyright.title}
                     </a>
-                  </>
+                  </React.Fragment>
                 ))}
             </div>
           </Grid.Column>

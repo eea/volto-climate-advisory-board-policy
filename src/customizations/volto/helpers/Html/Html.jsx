@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import serialize from 'serialize-javascript';
-import { join } from 'lodash';
+import join from 'lodash/join';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { runtimeConfig } from '@plone/volto/runtime_config';
 import config from '@plone/volto/registry';
@@ -148,8 +148,8 @@ class Html extends Component {
               rel: !criticalCss
                 ? elem.props.rel
                 : elem.props.as === 'style'
-                ? 'prefetch'
-                : elem.props.rel,
+                  ? 'prefetch'
+                  : elem.props.rel,
             }),
           )}
           {/* Styles in development are loaded with Webpack's style-loader, in production,
@@ -162,8 +162,8 @@ class Html extends Component {
                     __html: CRITICAL_CSS_TEMPLATE,
                   }}
                 ></script>
-                {extractor.getStyleElements().map((elem) => (
-                  <noscript>
+                {extractor.getStyleElements().map((elem, index) => (
+                  <noscript key={index}>
                     {React.cloneElement(elem, {
                       rel: 'stylesheet',
                       crossOrigin:

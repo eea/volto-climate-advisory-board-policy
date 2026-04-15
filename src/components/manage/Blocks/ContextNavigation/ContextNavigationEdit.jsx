@@ -1,6 +1,7 @@
 import React from 'react';
 import { EditSchema } from './schema';
-import { InlineForm, SidebarPortal } from '@plone/volto/components';
+import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import ContextNavigationView from './ContextNavigationView';
 
 const ContextNavigationFillView = (props) => {

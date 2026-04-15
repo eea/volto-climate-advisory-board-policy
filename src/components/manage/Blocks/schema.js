@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import imageNarrowSVG from '@eeacms/volto-climate-advisory-board-policy/components/manage/Blocks/icons/image-narrow.svg';
 import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageWideSVG from '@plone/volto/icons/image-wide.svg';

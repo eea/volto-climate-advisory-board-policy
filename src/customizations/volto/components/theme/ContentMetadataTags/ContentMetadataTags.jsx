@@ -1,4 +1,5 @@
-import { toPublicURL, Helmet } from '@plone/volto/helpers';
+import { toPublicURL } from '@plone/volto/helpers/Url/Url';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import config from '@plone/volto/registry';
 
 const ContentMetadataTags = (props) => {
