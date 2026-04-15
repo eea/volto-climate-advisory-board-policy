@@ -37,6 +37,7 @@ import userSession from '@plone/volto/reducers/userSession/userSession';
 
 import ErrorPage from '@plone/volto/error';
 
+// eslint-disable-next-line import/no-unresolved
 import languages from '@plone/volto/constants/Languages.cjs';
 
 import configureStore from '@plone/volto/store';
