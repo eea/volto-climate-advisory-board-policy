@@ -1,6 +1,6 @@
 import React from 'react';
 import ConnectedContextNavigation from '@plone/volto/components/theme/Navigation/ContextNavigation';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 const ContextNavigationView = ({ data = {} }) => {
   const navProps = { ...data };

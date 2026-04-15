@@ -1,5 +1,5 @@
 import React from 'react';
-import { BodyClass } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import newsLetterFormHTML from './newsLetterFormHTML';
 
 const markup = { __html: newsLetterFormHTML };

@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import { compose } from 'redux';
-import { BodyClass } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { serializeText } from '@eeacms/volto-hero-block/helpers';
 import Hero from '@eeacms/volto-hero-block/components/Blocks/Hero/Hero';
 import Banner from '@eeacms/volto-eea-design-system/ui/Banner/Banner';

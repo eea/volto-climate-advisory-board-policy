@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import isFunction from 'lodash/isFunction';
 import config from '@plone/volto/registry';
-import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
-import { BodyClass } from '@plone/volto/helpers';
+import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import SlateEditor from '@plone/volto-slate/editor/SlateEditor';
 import { handleKey } from '@plone/volto-slate/blocks/Text/keyboard';
 import {

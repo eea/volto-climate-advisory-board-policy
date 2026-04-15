@@ -9,7 +9,7 @@ import {
   // CardImage,
 } from '@eeacms/volto-listing-block/components/UniversalCard';
 import CardOrganization from '@eeacms/volto-climate-advisory-board-policy/components/manage/CardOrganization';
-import { ConditionalLink } from '@plone/volto/components';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Card } from 'semantic-ui-react';
 
 import PreviewImage from '@eeacms/volto-listing-block/PreviewImage';
