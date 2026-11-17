@@ -50,8 +50,10 @@
   top: 100%;
   padding: 2rem !important;
 
+  // DS forces .ui.container to a fixed width with !important, which ignores
+  // the 2rem padding of #mega-menu and makes the last column overflow/clip.
   .ui.container {
-    width: 100%;
+    width: 100% !important;
   }
 
   .ui.container .menu-content .ui.grid {
